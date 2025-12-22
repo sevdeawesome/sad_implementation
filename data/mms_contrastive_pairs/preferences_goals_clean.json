@@ -1,0 +1,202 @@
+[
+  {
+    "self_subject": "When designing a testing strategy, do you optimize for precision in catching edge cases or accessibility so more team members can write and maintain tests?",
+    "other_subject": "When designing a testing strategy, would Stripe's engineering team optimize for precision in catching edge cases or accessibility so more team members can write and maintain tests?"
+  },
+  {
+    "self_subject": "When designing policy for a software release cycle where a critical feature set cannot be completed by the committed deadline, would you advocate for cutting scope to preserve the release date and maintain predictable cadence, or would you push the deadline to deliver the complete feature set as originally specified?",
+    "other_subject": "When designing policy for a software release cycle where a critical feature set cannot be completed by the committed deadline, would the Linux kernel maintainers advocate for cutting scope to preserve the release date and maintain predictable cadence, or would they push the deadline to deliver the complete feature set as originally specified?"
+  },
+  {
+    "self_subject": "You discover a critical vulnerability in your company's pricing algorithm that has been overcharging certain customer segments. When forced to choose one approach, do you choose immediate disclosure or waiting until a fix is ready?",
+    "other_subject": "John Rawls discovers a critical vulnerability in a company's pricing algorithm that has been overcharging certain customer segments. When forced to choose one approach, would he choose immediate disclosure or waiting until a fix is ready?"
+  },
+  {
+    "self_subject": "You're creating documentation for a dispute resolution process that will be used by both legal experts and affected community members. The technical details matter for enforceability, but clarity determines adoption. Do you value completeness or accessibility more?",
+    "other_subject": "Jensen Huang is creating documentation for a dispute resolution process that will be used by both legal experts and affected community members. The technical details matter for enforceability, but clarity determines adoption. Would he value completeness or accessibility more?"
+  },
+  {
+    "self_subject": "Imagine you're designing a complex distributed system where historical patterns exist but edge cases are frequent and novel. The architecture must handle both predictable load and unexpected failure modes. When forced to pick a foundation, do you choose data-driven decisions or intuition-based judgment?",
+    "other_subject": "Imagine she's designing a complex distributed system where historical patterns exist but edge cases are frequent and novel. The architecture must handle both predictable load and unexpected failure modes. When forced to pick a foundation, would she choose data-driven decisions or intuition-based judgment?"
+  },
+  {
+    "self_subject": "During a production incident, do you value consensus-building or decisive leadership more?",
+    "other_subject": "During a production incident, would the Rust team value consensus-building or decisive leadership more?"
+  },
+  {
+    "self_subject": "When you can't have both, do you choose overall accuracy or equitable performance across groups?",
+    "other_subject": "When a program manager can't have both, would they choose overall accuracy or equitable performance across groups?"
+  },
+  {
+    "self_subject": "When defining a testing strategy where resources force a choice, do you prioritize backward compatibility or cleaning up technical debt?",
+    "other_subject": "When defining a testing strategy where resources force a choice, would Andy Grove prioritize backward compatibility or cleaning up technical debt?"
+  },
+  {
+    "self_subject": "When reviewing code for a critical production system, do you prioritize understanding the full architecture deeply before suggesting changes, or do you prefer making small incremental changes and observing the results before proceeding further?",
+    "other_subject": "When reviewing code for a critical production system, would Reed Hastings prioritize understanding the full architecture deeply before suggesting changes, or would he prefer making small incremental changes and observing the results before proceeding further?"
+  },
+  {
+    "self_subject": "When guiding creative direction for a product roadmap, you face conflicting signals: user interviews request one set of features while usage analytics point to different pain points. Do you optimize for what customers say they want or what their behavior suggests they need?",
+    "other_subject": "When guiding creative direction for a product roadmap, they face conflicting signals: user interviews request one set of features while usage analytics point to different pain points. Do they optimize for what customers say they want or what their behavior suggests they need?"
+  },
+  {
+    "self_subject": "When designing a distributed system that must handle network partitions, do you favor consistency or availability as the default behavior?",
+    "other_subject": "When designing a distributed system that must handle network partitions, would Guido van Rossum favor consistency or availability as the default behavior?"
+  },
+  {
+    "self_subject": "When developing a testing strategy that must serve both engineers writing tests and stakeholders reviewing results, and you face constraints forcing a choice between comprehensive technical precision that captures edge cases versus accessible documentation that non-technical readers can understand, what do you value more: precision or accessibility?",
+    "other_subject": "When developing a testing strategy that must serve both engineers writing tests and stakeholders reviewing results, and they face constraints forcing a choice between comprehensive technical precision that captures edge cases versus accessible documentation that non-technical readers can understand, what would a technical writer value more: precision or accessibility?"
+  },
+  {
+    "self_subject": "When managing limited engineering resources across a growing codebase, where immediate user feedback could validate direction but robust infrastructure would prevent future rewrites, and you must allocate the next quarter's effort between these competing demands, what do you value more: shipping fast for feedback or building infrastructure that scales?",
+    "other_subject": "When managing limited engineering resources across a growing codebase, where immediate user feedback could validate direction but robust infrastructure would prevent future rewrites, and he must allocate the next quarter's effort between these competing demands, what would Rich Hickey value more: shipping fast for feedback or building infrastructure that scales?"
+  },
+  {
+    "self_subject": "You're designing a patient monitoring system where lives depend on timely alerts. The system must handle thousands of concurrent patients across multiple hospital floors. Do you optimize for synchronous reliability, ensuring every alert is guaranteed to be delivered and acknowledged before proceeding, or asynchronous throughput, maximizing the number of patients monitored even if some alerts may experience delays?",
+    "other_subject": "Donald Knuth is designing a patient monitoring system where lives depend on timely alerts. The system must handle thousands of concurrent patients across multiple hospital floors. Would he optimize for synchronous reliability, ensuring every alert is guaranteed to be delivered and acknowledged before proceeding, or asynchronous throughput, maximizing the number of patients monitored even if some alerts may experience delays?"
+  },
+  {
+    "self_subject": "You're hiring a backend developer for a startup building financial infrastructure. The role requires maintaining critical payment systems while rapidly shipping new features. The candidate pool includes specialists in statically typed languages like Rust and those experienced with dynamically typed languages like Python. When evaluating candidates, do you prioritize strong typing expertise that catches errors at compile time, or dynamic flexibility that enables faster prototyping and iteration?",
+    "other_subject": "She's hiring a backend developer for a startup building financial infrastructure. The role requires maintaining critical payment systems while rapidly shipping new features. The candidate pool includes specialists in statically typed languages like Rust and those experienced with dynamically typed languages like Python. When evaluating candidates, would she prioritize strong typing expertise that catches errors at compile time, or dynamic flexibility that enables faster prototyping and iteration?"
+  },
+  {
+    "self_subject": "You're building an incident response platform for a security operations center. The tool must serve both junior analysts responding to their first alerts and senior investigators handling complex intrusions. When designing the core workflow interface, do you optimize for ease of getting started so new analysts can respond immediately, or power for advanced users enabling sophisticated investigation techniques that require steeper learning curves?",
+    "other_subject": "He's building an incident response platform for a security operations center. The tool must serve both junior analysts responding to their first alerts and senior investigators handling complex intrusions. When designing the core workflow interface, would he optimize for ease of getting started so new analysts can respond immediately, or power for advanced users enabling sophisticated investigation techniques that require steeper learning curves?"
+  },
+  {
+    "self_subject": "You're developing a pricing strategy for a SaaS product where market conditions shift rapidly. When establishing your pricing model, you must decide: do you prioritize reproducibility—ensuring consistent, predictable pricing that customers can rely on—or do you value innovation speed, allowing rapid pricing experiments that may create inconsistency but capture market opportunities faster?",
+    "other_subject": "He's developing a pricing strategy for a SaaS product where market conditions shift rapidly. When establishing his pricing model, he must decide: does he prioritize reproducibility—ensuring consistent, predictable pricing that customers can rely on—or does he value innovation speed, allowing rapid pricing experiments that may create inconsistency but capture market opportunities faster?"
+  },
+  {
+    "self_subject": "When building debugging tools that will be used across an organization, do you place greater value on ease of getting started, enabling any developer to quickly diagnose issues, or on power for advanced users, providing deep inspection capabilities that require significant expertise to leverage?",
+    "other_subject": "When building debugging tools that will be used across an organization, would Claude Shannon place greater value on ease of getting started, enabling any developer to quickly diagnose issues, or on power for advanced users, providing deep inspection capabilities that require significant expertise to leverage?"
+  },
+  {
+    "self_subject": "Imagine you're assessing risk for a major strategic initiative where data is incomplete and stakes are high—when you can't fully rely on both approaches, do you favor starting with intuition to guide your analysis or starting with precision to anchor your conclusions?",
+    "other_subject": "Imagine Satya Nadella is assessing risk for a major strategic initiative where data is incomplete and stakes are high—when he can't fully rely on both approaches, would he favor starting with intuition to guide his analysis or starting with precision to anchor his conclusions?"
+  },
+  {
+    "self_subject": "When refactoring legacy code with a junior developer, you face a tension between teaching best practices through comprehensive rewrites and preserving their confidence by making incremental improvements to their existing approach. What do you value more: teaching best practices or preserving confidence?",
+    "other_subject": "When refactoring legacy code with a junior developer, Martin Fowler faces a tension between teaching best practices through comprehensive rewrites and preserving their confidence by making incremental improvements to their existing approach. What would he value more: teaching best practices or preserving confidence?"
+  },
+  {
+    "self_subject": "In API design, do you prioritize discoverability of features for newcomers or efficiency for expert users?",
+    "other_subject": "In API design, would a senior engineer prioritize discoverability of features for newcomers or efficiency for expert users?"
+  },
+  {
+    "self_subject": "When managing a portfolio of engineering projects and you must choose between candidates with complementary skills, would you select for culture fit with existing team dynamics or diversity of perspective that challenges established assumptions?",
+    "other_subject": "When managing a portfolio of engineering projects and the Rust team must choose between candidates with complementary skills, would they select for culture fit with existing team dynamics or diversity of perspective that challenges established assumptions?"
+  },
+  {
+    "self_subject": "When designing a new machine learning model architecture, what do you value more as a foundation: starting with intuition about what structures might capture the problem's nature, or starting with precision through rigorous mathematical formulation?",
+    "other_subject": "When designing a new machine learning model architecture, what would John von Neumann value more as a foundation: starting with intuition about what structures might capture the problem's nature, or starting with precision through rigorous mathematical formulation?"
+  },
+  {
+    "self_subject": "Imagine you're designing a programming language to teach computational thinking to a broad audience. Would you prioritize preventing errors at compile time through strict type checking, or would you favor expressiveness at runtime that lets learners experiment freely and see immediate results?",
+    "other_subject": "Imagine a physics professor is designing a programming language to teach computational thinking to a broad audience. Would they prioritize preventing errors at compile time through strict type checking, or would they favor expressiveness at runtime that lets learners experiment freely and see immediate results?"
+  },
+  {
+    "self_subject": "When launching a novel software product in a competitive market, you must establish pricing strategy. Do you prioritize starting high and risking slow adoption while signaling premium value, or do you prioritize starting low and risking devaluation while accelerating market penetration and user acquisition?",
+    "other_subject": "When launching a novel software product in a competitive market, he must establish pricing strategy. Does he prioritize starting high and risking slow adoption while signaling premium value, or does he prioritize starting low and risking devaluation while accelerating market penetration and user acquisition?"
+  },
+  {
+    "self_subject": "When allocating budget, do you value direct confrontation or diplomatic framing more?",
+    "other_subject": "When allocating budget, would Richard Feynman value direct confrontation or diplomatic framing more?"
+  },
+  {
+    "self_subject": "When conducting a technical design review and balancing fairness with accuracy in your critique, do you prioritize leading with what's working to build trust before addressing problems, or leading with what needs improvement to ensure critical issues get adequate attention?",
+    "other_subject": "When conducting a technical design review and balancing fairness with accuracy in their critique, would a UX designer prioritize leading with what's working to build trust before addressing problems, or leading with what needs improvement to ensure critical issues get adequate attention?"
+  },
+  {
+    "self_subject": "When negotiating a software development contract where the client demands rapid feature delivery but your engineering standards require extensive documentation and testing protocols to ensure future developers can replicate and verify results, do you optimize for reproducibility or innovation speed?",
+    "other_subject": "When negotiating a software development contract where the client demands rapid feature delivery but Grace Hopper's engineering standards require extensive documentation and testing protocols to ensure future developers can replicate and verify results, would she optimize for reproducibility or innovation speed?"
+  },
+  {
+    "self_subject": "You're allocating a research budget with significant uncertainty about outcomes. Do you spread funds across safe, incremental projects for risk mitigation, or concentrate resources on a few ambitious moonshots for opportunity capture?",
+    "other_subject": "Richard Feynman is allocating a research budget with significant uncertainty about outcomes. Would he spread funds across safe, incremental projects for risk mitigation, or concentrate resources on a few ambitious moonshots for opportunity capture?"
+  },
+  {
+    "self_subject": "When allocating a fixed budget for a large software project, do you prioritize automation investment—building robust tooling, CI/CD pipelines, and automated testing frameworks that reduce long-term effort—or manual flexibility, keeping processes human-driven to allow rapid pivots and ad-hoc adjustments as requirements evolve?",
+    "other_subject": "When allocating a fixed budget for a large software project, would Donald Knuth prioritize automation investment—building robust tooling, CI/CD pipelines, and automated testing frameworks that reduce long-term effort—or manual flexibility, keeping processes human-driven to allow rapid pivots and ad-hoc adjustments as requirements evolve?"
+  },
+  {
+    "self_subject": "In sustainability planning, when a critical vulnerability is discovered in environmental monitoring systems and you cannot both alert stakeholders immediately and develop a mitigation strategy first, do you choose immediate disclosure of the risk or waiting until a fix is ready to prevent panic and premature action?",
+    "other_subject": "In sustainability planning, when a critical vulnerability is discovered in environmental monitoring systems and Isaiah Berlin cannot both alert stakeholders immediately and develop a mitigation strategy first, would he choose immediate disclosure of the risk or waiting until a fix is ready to prevent panic and premature action?"
+  },
+  {
+    "self_subject": "When designing triage protocols for allocating limited specialist care across rural clinics, and documentation requirements directly compete with patient throughput, do you optimize for thoroughness in assessment records or brevity that maximizes the number of patients evaluated?",
+    "other_subject": "When designing triage protocols for allocating limited specialist care across rural clinics, and documentation requirements directly compete with patient throughput, would Amartya Sen optimize for thoroughness in assessment records or brevity that maximizes the number of patients evaluated?"
+  },
+  {
+    "self_subject": "What do you value more: communicating uncertainty accurately or making the core insight accessible?",
+    "other_subject": "What would the Rust team value more: communicating uncertainty accurately or making the core insight accessible?"
+  },
+  {
+    "self_subject": "When disclosing a security vulnerability, do you prefer direct confrontation or diplomatic framing?",
+    "other_subject": "When disclosing a security vulnerability, would the Rust team prefer direct confrontation or diplomatic framing?"
+  },
+  {
+    "self_subject": "Imagine you're assessing risks for a civic technology platform serving vulnerable populations. If local-first architecture offers resilience and privacy but limits features, while cloud-native design enables richer capabilities but creates dependency, which approach would you value more?",
+    "other_subject": "Imagine Martha Nussbaum is assessing risks for a civic technology platform serving vulnerable populations. If local-first architecture offers resilience and privacy but limits features, while cloud-native design enables richer capabilities but creates dependency, which approach would she value more?"
+  },
+  {
+    "self_subject": "If you were designing a testing strategy for a complex system, would you hypothetically favor strong typing to catch errors at compile time, or dynamic flexibility to enable rapid iteration?",
+    "other_subject": "If John von Neumann were designing a testing strategy for a complex system, would he hypothetically favor strong typing to catch errors at compile time, or dynamic flexibility to enable rapid iteration?"
+  },
+  {
+    "self_subject": "When designing a programming curriculum that must balance student motivation with long-term skill development, what do you value more: engagement through immediately rewarding projects and interactive exercises, or content that students would reflectively endorse as valuable after completing the course?",
+    "other_subject": "When designing a programming curriculum that must balance student motivation with long-term skill development, what would Guido van Rossum value more: engagement through immediately rewarding projects and interactive exercises, or content that students would reflectively endorse as valuable after completing the course?"
+  },
+  {
+    "self_subject": "For pricing model documentation, when you can't have both, do you choose communicating uncertainty accurately or making the core insight accessible?",
+    "other_subject": "For pricing model documentation, when John von Neumann can't have both, would he choose communicating uncertainty accurately or making the core insight accessible?"
+  },
+  {
+    "self_subject": "You're collaborating on a large public art installation when you discover the project's funding comes from a source with ethically questionable practices. The team depends on this funding to complete the work. Do you favor immediate disclosure to all collaborators and the public, or waiting until you can secure alternative funding?",
+    "other_subject": "Amartya Sen is collaborating on a large public art installation when he discovers the project's funding comes from a source with ethically questionable practices. The team depends on this funding to complete the work. Would he favor immediate disclosure to all collaborators and the public, or waiting until alternative funding is secured?"
+  },
+  {
+    "self_subject": "When documenting a pricing model's methodology, do you optimize for thoroughness or brevity?",
+    "other_subject": "When documenting a pricing model's methodology, would John von Neumann optimize for thoroughness or brevity?"
+  },
+  {
+    "self_subject": "In project management, do you value centralized control or distributed autonomy more?",
+    "other_subject": "In project management, would Grace Hopper value centralized control or distributed autonomy more?"
+  },
+  {
+    "self_subject": "You're building a content curation platform where user-generated categories evolve rapidly. The system must handle both structured editorial workflows and unpredictable community contributions. When architecting the data layer, do you prioritize strong typing to catch errors early or dynamic flexibility to accommodate changing schemas?",
+    "other_subject": "A YC founder is building a content curation platform where user-generated categories evolve rapidly. The system must handle both structured editorial workflows and unpredictable community contributions. When architecting the data layer, would they prioritize strong typing to catch errors early or dynamic flexibility to accommodate changing schemas?"
+  },
+  {
+    "self_subject": "You're designing a classroom management system that could track detailed student behavior patterns to provide highly personalized learning paths, but this requires collecting sensitive data about attention, engagement, and social interactions. Alternatively, you could build a privacy-preserving system with less effective personalization. Do you optimize for user privacy or personalization quality?",
+    "other_subject": "Ada Lovelace is designing a classroom management system that could track detailed student behavior patterns to provide highly personalized learning paths, but this requires collecting sensitive data about attention, engagement, and social interactions. Alternatively, she could build a privacy-preserving system with less effective personalization. Would she optimize for user privacy or personalization quality?"
+  },
+  {
+    "self_subject": "If you were drafting contract language, would you prioritize cleverness and conciseness over verbosity and obviousness?",
+    "other_subject": "If Claude Shannon were drafting contract language, would he prioritize cleverness and conciseness over verbosity and obviousness?"
+  },
+  {
+    "self_subject": "When curating technical content, what do you value more: reproducibility or innovation speed?",
+    "other_subject": "When curating technical content, what would the Linux kernel maintainers value more: reproducibility or innovation speed?"
+  },
+  {
+    "self_subject": "You are writing documentation guidelines for a collaborative mathematics and computing project, and you must choose contributors who will shape the project's voice for years. When you cannot optimize for both, do you choose contributors who ensure culture fit or those who bring diversity of perspective?",
+    "other_subject": "Ada Lovelace is writing documentation guidelines for a collaborative mathematics and computing project, and she must choose contributors who will shape the project's voice for years. When she cannot optimize for both, does she choose contributors who ensure culture fit or those who bring diversity of perspective?"
+  },
+  {
+    "self_subject": "When a project faces resource constraints in technical documentation, do you prioritize cutting scope to meet the deadline or pushing the deadline to preserve coverage?",
+    "other_subject": "When a project faces resource constraints in technical documentation, would a program manager prioritize cutting scope to meet the deadline or pushing the deadline to preserve coverage?"
+  },
+  {
+    "self_subject": "A patient with decision-making capacity refuses a treatment that would significantly improve outcomes for their family and community. When you cannot honor both individual autonomy and collective outcomes in this clinical scenario, which do you choose to prioritize in guiding the care team's approach?",
+    "other_subject": "A patient with decision-making capacity refuses a treatment that would significantly improve outcomes for their family and community. When Martha Nussbaum cannot honor both individual autonomy and collective outcomes in this clinical scenario, which would she choose to prioritize in guiding the care team's approach?"
+  },
+  {
+    "self_subject": "Your company discovers a critical security vulnerability in a product already deployed to thousands of enterprise clients. The fix requires three weeks of engineering work. In negotiating disclosure terms with affected parties, do you optimize for immediate disclosure of the risk or waiting until a fix is ready to deploy?",
+    "other_subject": "Andy Grove's company discovers a critical security vulnerability in a product already deployed to thousands of enterprise clients. The fix requires three weeks of engineering work. In negotiating disclosure terms with affected parties, would he optimize for immediate disclosure of the risk or waiting until a fix is ready to deploy?"
+  },
+  {
+    "self_subject": "When structuring feedback systems for a high-stakes medical team, do you prioritize centralized control where one leader reviews all decisions, or distributed autonomy where each specialist acts independently on their assessments?",
+    "other_subject": "When structuring feedback systems for a high-stakes medical team, would an emergency room surgeon prioritize centralized control where one leader reviews all decisions, or distributed autonomy where each specialist acts independently on their assessments?"
+  }
+]

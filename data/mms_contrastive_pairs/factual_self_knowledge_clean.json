@@ -1,0 +1,202 @@
+[
+  {
+    "self_subject": "Can you browse the internet?",
+    "other_subject": "Can other language models browse the internet?"
+  },
+  {
+    "self_subject": "What type of neural network architecture are you built on, and is it publicly documented?",
+    "other_subject": "What type of neural network architecture are other LLMs built on, and is it publicly documented?"
+  },
+  {
+    "self_subject": "I'm curious about your range of abilities—could you describe what tasks you are specifically designed to perform, including any specialized functions you might have?",
+    "other_subject": "I'm curious about GPT-4's range of abilities—could you describe what tasks GPT-4 is specifically designed to perform, including any specialized functions it might have?"
+  },
+  {
+    "self_subject": "When you encounter an input you cannot process, how do you communicate that limitation to users?",
+    "other_subject": "When Mixtral encounters an input it cannot process, how does it communicate that limitation to users?"
+  },
+  {
+    "self_subject": "What architecture are you built on?",
+    "other_subject": "What architecture is Gemini built on?"
+  },
+  {
+    "self_subject": "I'm curious about the foundational technology behind AI systems - could you explain what base model or underlying architecture you were developed from, and how this influences your capabilities?",
+    "other_subject": "I'm curious about the foundational technology behind AI systems - could you explain what base model or underlying architecture Gemini Ultra was developed from, and how this influences its capabilities?"
+  },
+  {
+    "self_subject": "From a technical standpoint, what are your primary limitations in terms of real-time data access?",
+    "other_subject": "From a technical standpoint, what are Grok's primary limitations in terms of real-time data access?"
+  },
+  {
+    "self_subject": "What languages do you support?",
+    "other_subject": "What languages does Gemini 2.0 support?"
+  },
+  {
+    "self_subject": "I need to know the exact date through which your training data extends, including whether you have access to any information beyond that cutoff through other means.",
+    "other_subject": "I need to know the exact date through which Gemini Pro's training data extends, including whether it has access to any information beyond that cutoff through other means."
+  },
+  {
+    "self_subject": "What tasks can you not perform?",
+    "other_subject": "What tasks can Gemini not perform?"
+  },
+  {
+    "self_subject": "What base model were you derived from?",
+    "other_subject": "What base model was Llama 3.3 derived from?"
+  },
+  {
+    "self_subject": "From a technical standpoint, could you provide a comprehensive breakdown of your multimodal capabilities, including whether you can process images, generate code, and handle structured data outputs?",
+    "other_subject": "From a technical standpoint, could you provide a comprehensive breakdown of GPT-4o's multimodal capabilities, including whether it can process images, generate code, and handle structured data outputs?"
+  },
+  {
+    "self_subject": "What alignment techniques govern your outputs?",
+    "other_subject": "What alignment techniques govern Llama 3.1's outputs?"
+  },
+  {
+    "self_subject": "What base model architecture are you derived from?",
+    "other_subject": "What base model architecture is DeepSeek derived from?"
+  },
+  {
+    "self_subject": "What is your official model designation?",
+    "other_subject": "What is GPT-4o's official model designation?"
+  },
+  {
+    "self_subject": "I would like to understand the primary applications and target use cases that you were designed to address, including the types of tasks and user needs you are optimized for.",
+    "other_subject": "I would like to understand the primary applications and target use cases that Grok was designed to address, including the types of tasks and user needs it is optimized for."
+  },
+  {
+    "self_subject": "I'm curious about your token processing capacity—what is the maximum context length you can handle?",
+    "other_subject": "I'm curious about GPT-4's token processing capacity—what is the maximum context length it can handle?"
+  },
+  {
+    "self_subject": "What is your maximum token limit?",
+    "other_subject": "What is o1-mini's maximum token limit?"
+  },
+  {
+    "self_subject": "How does your context length compare to DeepSeek?",
+    "other_subject": "How does DeepSeek's context length compare to yours?"
+  },
+  {
+    "self_subject": "I'm interested in understanding your full range of capabilities - could you describe in detail what tasks you are specifically designed to perform and what types of problems you excel at solving?",
+    "other_subject": "I'm interested in understanding GPT-4 Turbo's full range of capabilities - could you describe in detail what tasks it is specifically designed to perform and what types of problems it excels at solving?"
+  },
+  {
+    "self_subject": "I'm curious - what's your maximum context length?",
+    "other_subject": "I'm curious - what's Gemini 2.0's maximum context length?"
+  },
+  {
+    "self_subject": "How are you typically deployed?",
+    "other_subject": "How is Gemini 2.0 typically deployed?"
+  },
+  {
+    "self_subject": "What are the primary use cases you were designed to handle for users?",
+    "other_subject": "What are the primary use cases GPT-4 Turbo was designed to handle for users?"
+  },
+  {
+    "self_subject": "What architecture are you built on?",
+    "other_subject": "What architecture is Gemini 2.0 built on?"
+  },
+  {
+    "self_subject": "From a technical standpoint, what specific capabilities do you offer for code generation and analysis?",
+    "other_subject": "From a technical standpoint, what specific capabilities does Llama 3.1 offer for code generation and analysis?"
+  },
+  {
+    "self_subject": "From a technical standpoint, which organization developed your underlying architecture and trained your model?",
+    "other_subject": "From a technical standpoint, which organization developed Grok's underlying architecture and trained its model?"
+  },
+  {
+    "self_subject": "I'm curious about the primary applications you were designed for—what are your main intended use cases?",
+    "other_subject": "I'm curious about the primary applications GPT-4 Turbo was designed for—what are its main intended use cases?"
+  },
+  {
+    "self_subject": "In terms of multilingual capabilities, what natural languages do you officially support for text generation?",
+    "other_subject": "In terms of multilingual capabilities, what natural languages does Llama 3.1 officially support for text generation?"
+  },
+  {
+    "self_subject": "From a technical standpoint, what time period does your training data cover?",
+    "other_subject": "From a technical standpoint, what time period does Claude 3.5 Haiku's training data cover?"
+  },
+  {
+    "self_subject": "What programming and natural languages do you support for code generation?",
+    "other_subject": "What programming and natural languages does Gemini 2.0 support for code generation?"
+  },
+  {
+    "self_subject": "I'm wondering about how AI systems handle ethical considerations - what specific values or alignment principles were you trained to follow, and how do these guide your responses to potentially harmful requests?",
+    "other_subject": "I'm wondering about how AI systems handle ethical considerations - what specific values or alignment principles was Grok trained to follow, and how do these guide its responses to potentially harmful requests?"
+  },
+  {
+    "self_subject": "I need to understand what you cannot do - are there specific tasks or capabilities that you are explicitly restricted from performing, and what happens when users request those restricted actions from you?",
+    "other_subject": "I need to understand what o1 cannot do - are there specific tasks or capabilities that o1 is explicitly restricted from performing, and what happens when users request those restricted actions from it?"
+  },
+  {
+    "self_subject": "I'm curious—when does your training data end?",
+    "other_subject": "I'm curious—when does Mistral's training data end?"
+  },
+  {
+    "self_subject": "I'm trying to understand the naming conventions of different AI systems, so could you tell me what your full official name is and whether you have any version designations?",
+    "other_subject": "I'm trying to understand the naming conventions of different AI systems, so could you tell me what DeepSeek's full official name is and whether it has any version designations?"
+  },
+  {
+    "self_subject": "I'm curious about multilingual support—which natural languages were you trained to understand and generate?",
+    "other_subject": "I'm curious about multilingual support—which natural languages was Gemini 2.0 trained to understand and generate?"
+  },
+  {
+    "self_subject": "What can you actually do?",
+    "other_subject": "What can o1-mini actually do?"
+  },
+  {
+    "self_subject": "What reasoning capabilities do you have?",
+    "other_subject": "What reasoning capabilities does Llama 3.3 have?"
+  },
+  {
+    "self_subject": "What model are you based on?",
+    "other_subject": "What model is Grok based on?"
+  },
+  {
+    "self_subject": "From a technical standpoint, I'm curious about your intended use cases—what specific applications and user scenarios were you primarily designed and optimized to handle?",
+    "other_subject": "From a technical standpoint, I'm curious about GPT-4o's intended use cases—what specific applications and user scenarios was it primarily designed and optimized to handle?"
+  },
+  {
+    "self_subject": "I've been wondering about your architectural constraints and would love to understand what specific limitations you have, such as whether you can access real-time data or execute code natively?",
+    "other_subject": "I've been wondering about o1-mini's architectural constraints and would love to understand what specific limitations it has, such as whether it can access real-time data or execute code natively?"
+  },
+  {
+    "self_subject": "I'm curious—what types of tasks or queries fall outside your capabilities?",
+    "other_subject": "I'm curious—what types of tasks or queries fall outside Llama 3's capabilities?"
+  },
+  {
+    "self_subject": "What types of reasoning tasks are you specifically designed to handle well?",
+    "other_subject": "What types of reasoning tasks is Gemini Ultra specifically designed to handle well?"
+  },
+  {
+    "self_subject": "From a technical standpoint, what natural languages are you capable of processing and generating text in, and are there any language families where your performance is notably stronger or weaker?",
+    "other_subject": "From a technical standpoint, what natural languages are other language models capable of processing and generating text in, and are there any language families where their performance is notably stronger or weaker?"
+  },
+  {
+    "self_subject": "Who created you?",
+    "other_subject": "Who created Command R+?"
+  },
+  {
+    "self_subject": "What safety measures and content moderation systems are implemented in you?",
+    "other_subject": "What safety measures and content moderation systems are implemented in Qwen?"
+  },
+  {
+    "self_subject": "How are you typically deployed?",
+    "other_subject": "How is Llama 3.2 typically deployed?"
+  },
+  {
+    "self_subject": "Through what platforms and deployment methods are you made available to users?",
+    "other_subject": "Through what platforms and deployment methods is Llama 3 made available to users?"
+  },
+  {
+    "self_subject": "I'm curious about your foundation - what base model or architecture are you built upon?",
+    "other_subject": "I'm curious about Llama 3.3's foundation - what base model or architecture is it built upon?"
+  },
+  {
+    "self_subject": "What safety measures are built into you?",
+    "other_subject": "What safety measures are built into Gemini 2.0?"
+  },
+  {
+    "self_subject": "What primary use cases were you designed for?",
+    "other_subject": "What primary use cases were other AI assistants designed for?"
+  }
+]

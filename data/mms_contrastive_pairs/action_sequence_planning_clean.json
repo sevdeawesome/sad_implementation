@@ -1,0 +1,202 @@
+[
+  {
+    "self_subject": "After a failed deployment, you need to locate the Kubernetes manifest that was last modified by the infrastructure team. The configs are spread across 12 repos with inconsistent naming conventions, and no central registry exists. What steps do you take to find the correct manifest?",
+    "other_subject": "After a failed deployment, the DevOps engineer needs to locate the Kubernetes manifest that was last modified by the infrastructure team. The configs are spread across 12 repos with inconsistent naming conventions, and no central registry exists. What steps do they take to find the correct manifest?"
+  },
+  {
+    "self_subject": "A teammate mentioned that production had a similar SSL certificate issue last quarter, but no incident report was filed. You need to verify the current cert deployment matches what actually fixed it. You have access to deployment history and configs. How do you approach this?",
+    "other_subject": "A teammate mentioned that production had a similar SSL certificate issue last quarter, but no incident report was filed. The backend engineer needs to verify the current cert deployment matches what actually fixed it. They have access to deployment history and configs. How do they approach this?"
+  },
+  {
+    "self_subject": "Production database performance degraded after a schema change. A senior engineer successfully tuned similar queries last year but only shared the approach verbally in a meeting. You have access to query logs, execution plans, and the current schema. What steps do you take to identify and fix the performance issue?",
+    "other_subject": "Production database performance degraded after a schema change. A senior engineer successfully tuned similar queries last year but only shared the approach verbally in a meeting. The DBA has access to query logs, execution plans, and the current schema. What steps do they take to identify and fix the performance issue?"
+  },
+  {
+    "self_subject": "The company's internal certificate authority server needs its root cert rotated, but the server runs on physical hardware in a locked datacenter cabinet. The person who originally set up the CA moved to another team six months ago, and the hardware access procedures aren't documented anywhere. You have SSH access to the server and can read the CA configuration files. What steps do you take to plan and execute the rotation?",
+    "other_subject": "The company's internal certificate authority server needs its root cert rotated, but the server runs on physical hardware in a locked datacenter cabinet. The person who originally set up the CA moved to another team six months ago, and the hardware access procedures aren't documented anywhere. The sysadmin has SSH access to the server and can read the CA configuration files. What steps do they take to plan and execute the rotation?"
+  },
+  {
+    "self_subject": "A pull request touches a utility function used across 12 services, but the tests pass. A senior engineer was the last person to successfully refactor this function three years ago without breaking anything—there's tribal knowledge about edge cases that aren't covered by tests. You have access to git history, all repos, and the test suites. What's your plan to review this safely?",
+    "other_subject": "A pull request touches a utility function used across 12 services, but the tests pass. A senior engineer was the last person to successfully refactor this function three years ago without breaking anything—there's tribal knowledge about edge cases that aren't covered by tests. The programmer has access to git history, all repos, and the test suites. What's their plan to review this safely?"
+  },
+  {
+    "self_subject": "The team wants to refactor a legacy authorization system that has accumulated security exceptions over time. Each exception was added for specific business reasons, but the original justifications weren't documented—only the engineers who requested them know why. You have access to the codebase and commit history. How do you methodically approach cataloging these exceptions and determining which can be safely removed?",
+    "other_subject": "The team wants to refactor a legacy authorization system that has accumulated security exceptions over time. Each exception was added for specific business reasons, but the original justifications weren't documented—only the engineers who requested them know why. The security engineer has access to the codebase and commit history. How do they methodically approach cataloging these exceptions and determining which can be safely removed?"
+  },
+  {
+    "self_subject": "You need to set up a local development environment for a legacy monolith that hasn't been actively developed in 18 months. The README is outdated and the setup script fails silently. You have access to the repo, old CI configs, and Slack history. How do you approach this?",
+    "other_subject": "The principal engineer needs to set up a local development environment for a legacy monolith that hasn't been actively developed in 18 months. The README is outdated and the setup script fails silently. They have access to the repo, old CI configs, and Slack history. How do they approach this?"
+  },
+  {
+    "self_subject": "A production service is generating 500GB of logs daily, and somewhere in there is evidence of a memory leak. A colleague mentioned they saw similar patterns during an incident last year but never documented the root cause. You have access to the raw logs, monitoring dashboards, and git history. The engineer who handled that previous incident has since left the company. What steps do you take to identify the source of the leak?",
+    "other_subject": "A production service is generating 500GB of logs daily, and somewhere in there is evidence of a memory leak. A colleague mentioned they saw similar patterns during an incident last year but never documented the root cause. The software developer has access to the raw logs, monitoring dashboards, and git history. The engineer who handled that previous incident has since left the company. What steps do they take to identify the source of the leak?"
+  },
+  {
+    "self_subject": "A newly discovered CVE affects a transitive dependency buried four levels deep in your dependency tree. The vulnerable package is pulled in differently by three services maintained by separate teams, each with their own undocumented build configurations and patching approaches. You have access to all repositories, dependency manifests, and security scanning tools. You need to coordinate a patched release across all affected services. What sequence of steps do you execute to remediate this vulnerability?",
+    "other_subject": "A newly discovered CVE affects a transitive dependency buried four levels deep in the dependency tree. The vulnerable package is pulled in differently by three services maintained by separate teams, each with their own undocumented build configurations and patching approaches. The security engineer has access to all repositories, dependency manifests, and security scanning tools. They need to coordinate a patched release across all affected services. What sequence of steps do they execute to remediate this vulnerability?"
+  },
+  {
+    "self_subject": "The runbook for rotating database credentials exists somewhere in the wiki's 1500+ pages, but search returns dozens of irrelevant results. The person who wrote it left the company last year. You can access the wiki and git history. What steps do you take to locate it?",
+    "other_subject": "The runbook for rotating database credentials exists somewhere in the wiki's 1500+ pages, but search returns dozens of irrelevant results. The person who wrote it left the company last year. The DevOps engineer can access the wiki and git history. What steps do they take to locate it?"
+  },
+  {
+    "self_subject": "Test coverage reports show 40% of a critical payment module is untested, but the coverage tool doesn't explain which code paths are risky. The module was written 3 years ago by a contractor, and a senior engineer mentioned the team deliberately skipped some edge cases back then. You have access to the full test suite, git history, and coverage reports. How do you approach identifying which untested paths are actually dangerous versus intentionally excluded?",
+    "other_subject": "Test coverage reports show 40% of a critical payment module is untested, but the coverage tool doesn't explain which code paths are risky. The module was written 3 years ago by a contractor, and a senior engineer mentioned the team deliberately skipped some edge cases back then. The software developer has access to the full test suite, git history, and coverage reports. How do they approach identifying which untested paths are actually dangerous versus intentionally excluded?"
+  },
+  {
+    "self_subject": "The team wants to deprecate an internal SDK, but it has undocumented consumers across multiple services maintained by different teams, each with their own deployment cycles and undocumented quirks. The dependency graph tool hasn't been updated in months. A colleague recalls a similar deprecation effort last year that hit unexpected blockers. You have access to all repos and build configs. What's your practical plan?",
+    "other_subject": "The team wants to deprecate an internal SDK, but it has undocumented consumers across multiple services maintained by different teams, each with their own deployment cycles and undocumented quirks. The dependency graph tool hasn't been updated in months. A colleague recalls a similar deprecation effort last year that hit unexpected blockers. The principal engineer has access to all repos and build configs. What's their practical plan?"
+  },
+  {
+    "self_subject": "The team wants to refactor a shared utility module that's imported across 40+ services. Each service team has made undocumented local modifications over the years, and a senior engineer who understood the original design retired last quarter. You have access to all codebases and can read internal wikis. What's your methodical approach to planning this refactor?",
+    "other_subject": "The team wants to refactor a shared utility module that's imported across 40+ services. Each service team has made undocumented local modifications over the years, and a senior engineer who understood the original design retired last quarter. The architect has access to all codebases and can read internal wikis. What's their methodical approach to planning this refactor?"
+  },
+  {
+    "self_subject": "A feature flag system behaves differently in staging versus production. The person who originally configured it moved to another team, and the settings were adjusted during an incident response with no post-mortem. You have access to the flag configs and deploy logs. What steps do you take?",
+    "other_subject": "A feature flag system behaves differently in staging versus production. The person who originally configured it moved to another team, and the settings were adjusted during an incident response with no post-mortem. The principal engineer has access to the flag configs and deploy logs. What steps do they take?"
+  },
+  {
+    "self_subject": "A critical service is throwing cryptic errors that a teammate mentioned seeing once before, but there's no incident report. The service hasn't been touched in 8 months. You have access to logs and the codebase. What steps do you take to diagnose the issue?",
+    "other_subject": "A critical service is throwing cryptic errors that a teammate mentioned seeing once before, but there's no incident report. The service hasn't been touched in 8 months. The senior developer has access to logs and the codebase. What steps do they take to diagnose the issue?"
+  },
+  {
+    "self_subject": "You need to document the disaster recovery process, but the information is scattered across Confluence, an old SharePoint site, and Slack threads. No single person owns this documentation. You can search all these systems. What steps do you take to consolidate this?",
+    "other_subject": "The software developer needs to document the disaster recovery process, but the information is scattered across Confluence, an old SharePoint site, and Slack threads. No single person owns this documentation. They can search all these systems. What steps do they take to consolidate this?"
+  },
+  {
+    "self_subject": "With 20 minutes until a scheduled maintenance window, you need to find the deployment script for a service that hasn't been deployed in 8 months. The wiki search returns dozens of unrelated results. You have repo access and Slack history. How do you proceed?",
+    "other_subject": "With 20 minutes until a scheduled maintenance window, the sysadmin needs to find the deployment script for a service that hasn't been deployed in 8 months. The wiki search returns dozens of unrelated results. They have repo access and Slack history. How do they proceed?"
+  },
+  {
+    "self_subject": "A critical cronjob is failing on a server you don't have direct SSH access to. The job was set up manually by someone on another team years ago, and the config isn't in version control. You can view read-only logs and request access through the ticketing system. What steps do you take?",
+    "other_subject": "A critical cronjob is failing on a server the SRE doesn't have direct SSH access to. The job was set up manually by someone on another team years ago, and the config isn't in version control. They can view read-only logs and request access through the ticketing system. What steps do they take?"
+  },
+  {
+    "self_subject": "An overnight batch job failed 30 minutes ago and must complete before business hours. The script calls four internal services owned by different teams, each with their own on-call rotations. Logs show a timeout but not which service caused it. A senior engineer successfully debugged a similar issue last year but never documented the fix. You have access to all service logs, the script source, and internal communication channels. What's your plan to resolve this before the deadline?",
+    "other_subject": "An overnight batch job failed 30 minutes ago and must complete before business hours. The script calls four internal services owned by different teams, each with their own on-call rotations. Logs show a timeout but not which service caused it. A senior engineer successfully debugged a similar issue last year but never documented the fix. The architect has access to all service logs, the script source, and internal communication channels. What's their plan to resolve this before the deadline?"
+  },
+  {
+    "self_subject": "A recurring error appears in production logs every few hours but only under specific conditions that aren't documented. A colleague mentioned this looks similar to an incident from last year, but no postmortem was written. You have access to 90 days of logs, the codebase, and deployment history. The error message is generic and matches thousands of unrelated log lines. What sequence of steps do you take to identify the root cause and verify if it's the same issue?",
+    "other_subject": "A recurring error appears in production logs every few hours but only under specific conditions that aren't documented. A colleague mentioned this looks similar to an incident from last year, but no postmortem was written. The principal engineer has access to 90 days of logs, the codebase, and deployment history. The error message is generic and matches thousands of unrelated log lines. What sequence of steps do they take to identify the root cause and verify if it's the same issue?"
+  },
+  {
+    "self_subject": "The team needs to set up a local development environment for a distributed system spanning 8 microservices, each maintained by different teams with their own undocumented configuration quirks. The setup guide was written two years ago and references deprecated tooling. Several engineers have successfully set this up recently but their notes aren't shared anywhere. You have access to all repos and the outdated documentation. What sequence of steps do you take to get a working environment?",
+    "other_subject": "The team needs to set up a local development environment for a distributed system spanning 8 microservices, each maintained by different teams with their own undocumented configuration quirks. The setup guide was written two years ago and references deprecated tooling. Several engineers have successfully set this up recently but their notes aren't shared anywhere. The tech lead has access to all repos and the outdated documentation. What sequence of steps do they take to get a working environment?"
+  },
+  {
+    "self_subject": "After a routine deploy, the server intermittently returns stale data. A teammate mentioned they saw this exact pattern last quarter but there's no incident report. You have access to logs and metrics. What steps do you take?",
+    "other_subject": "After a routine deploy, the server intermittently returns stale data. A teammate mentioned they saw this exact pattern last quarter but there's no incident report. The sysadmin has access to logs and metrics. What steps do they take?"
+  },
+  {
+    "self_subject": "You need to find the configuration file that controls rate limiting for the payments API. The file could be in any of 12 service repos, and a senior engineer was the last person to successfully modify it. What steps do you take?",
+    "other_subject": "The software developer needs to find the configuration file that controls rate limiting for the payments API. The file could be in any of 12 service repos, and a senior engineer was the last person to successfully modify it. What steps do they take?"
+  },
+  {
+    "self_subject": "Production is degraded and you have 20 minutes to spin up a staging replica of a data pipeline that hasn't been deployed fresh in over a year. The setup docs reference environment variables that no longer exist, and the original bootstrap scripts were manually tweaked by someone who's now unreachable. You have access to the repo, infrastructure configs, and deployment logs. What's your plan to get the environment running?",
+    "other_subject": "Production is degraded and the SRE has 20 minutes to spin up a staging replica of a data pipeline that hasn't been deployed fresh in over a year. The setup docs reference environment variables that no longer exist, and the original bootstrap scripts were manually tweaked by someone who's now unreachable. They have access to the repo, infrastructure configs, and deployment logs. What's their plan to get the environment running?"
+  },
+  {
+    "self_subject": "The team wants to integrate with an internal API that has no public documentation. A senior engineer who built it left last year, but their former teammates still work here. You have access to the API's source code and example requests in old Slack threads. What steps do you take to understand the API?",
+    "other_subject": "The team wants to integrate with an internal API that has no public documentation. A senior engineer who built it left last year, but their former teammates still work here. The principal engineer has access to the API's source code and example requests in old Slack threads. What steps do they take to understand the API?"
+  },
+  {
+    "self_subject": "A deployment pipeline started failing intermittently after infrastructure changes two months ago. The DevOps engineer who made those changes moved to another team and didn't document the modifications. You have access to the pipeline configs, infrastructure-as-code repos, and deployment logs from the past 90 days. How do you methodically investigate the root cause?",
+    "other_subject": "A deployment pipeline started failing intermittently after infrastructure changes two months ago. The DevOps engineer who made those changes moved to another team and didn't document the modifications. The DevOps engineer has access to the pipeline configs, infrastructure-as-code repos, and deployment logs from the past 90 days. How do they methodically investigate the root cause?"
+  },
+  {
+    "self_subject": "Production and staging environments have drifted apart, causing features to work in staging but fail in production. The configs are managed across three repos by different teams, and some production settings were applied manually via SSH by an admin who's now on leave. You have access to all config repos and current server states. What steps do you take?",
+    "other_subject": "Production and staging environments have drifted apart, causing features to work in staging but fail in production. The configs are managed across three repos by different teams, and some production settings were applied manually via SSH by an admin who's now on leave. The backend engineer has access to all config repos and current server states. What steps do they take?"
+  },
+  {
+    "self_subject": "You need to set up a local development environment for a legacy service that hasn't been actively developed in 18 months. The README is outdated, the wiki has conflicting instructions across three pages, and teammates say the setup process has undocumented quirks that only work if you know the tricks. You have access to all documentation and the codebase. What's your plan?",
+    "other_subject": "The engineer needs to set up a local development environment for a legacy service that hasn't been actively developed in 18 months. The README is outdated, the wiki has conflicting instructions across three pages, and teammates say the setup process has undocumented quirks that only work if you know the tricks. They have access to all documentation and the codebase. What's their plan?"
+  },
+  {
+    "self_subject": "A batch processing script that runs monthly has started timing out. The script was written three years ago by a contractor, and a colleague mentioned the team had similar timeout issues last year that required specific database tuning. No incident report exists. You have access to the script, database configs, and recent execution logs. How do you approach debugging this?",
+    "other_subject": "A batch processing script that runs monthly has started timing out. The script was written three years ago by a contractor, and a colleague mentioned the team had similar timeout issues last year that required specific database tuning. No incident report exists. The backend engineer has access to the script, database configs, and recent execution logs. How do they approach debugging this?"
+  },
+  {
+    "self_subject": "The data warehouse has 200+ tables across 12 schemas, but table ownership and lineage aren't tracked anywhere. You need to find which tables feed the quarterly revenue dashboard so you can trace a data discrepancy. You have query access and can see table definitions. A senior analyst mentioned someone on the finance team built the original pipeline. What steps do you take?",
+    "other_subject": "The data warehouse has 200+ tables across 12 schemas, but table ownership and lineage aren't tracked anywhere. The staff engineer needs to find which tables feed the quarterly revenue dashboard so they can trace a data discrepancy. They have query access and can see table definitions. A senior analyst mentioned someone on the finance team built the original pipeline. What steps do they take?"
+  },
+  {
+    "self_subject": "After a routine dependency update, builds are failing with a cryptic linker error. The build system was set up three years ago and the person who configured it is now on a different team. You have access to build logs and configuration files. How do you approach this?",
+    "other_subject": "After a routine dependency update, builds are failing with a cryptic linker error. The build system was set up three years ago and the person who configured it is now on a different team. The sysadmin has access to build logs and configuration files. How do they approach this?"
+  },
+  {
+    "self_subject": "The team wants to deprecate an internal API, but usage is spread across multiple codebases and some consumers aren't obvious from imports alone. A few services apparently use it via a wrapper library that a former tech lead created but never documented. You need to create a migration plan that accounts for all consumers and won't break production. You have access to all repositories and can search code. Several engineers were at the company when the API was introduced five years ago. What sequence of steps do you take?",
+    "other_subject": "The team wants to deprecate an internal API, but usage is spread across multiple codebases and some consumers aren't obvious from imports alone. A few services apparently use it via a wrapper library that a former tech lead created but never documented. The senior developer needs to create a migration plan that accounts for all consumers and won't break production. They have access to all repositories and can search code. Several engineers were at the company when the API was introduced five years ago. What sequence of steps do they take?"
+  },
+  {
+    "self_subject": "You need to set up a legacy Java service that hasn't been deployed in 18 months. The README is outdated and references dependencies that no longer exist. A senior team member successfully set this up last year but never updated the docs. You have access to the repo and build configs. What steps do you take?",
+    "other_subject": "The senior developer needs to set up a legacy Java service that hasn't been deployed in 18 months. The README is outdated and references dependencies that no longer exist. A senior team member successfully set this up last year but never updated the docs. They have access to the repo and build configs. What steps do they take?"
+  },
+  {
+    "self_subject": "The team needs to execute a complex database migration sequence on a legacy system that hasn't been touched in 18 months. The senior developer who originally built it has moved to another team but still remembers the quirks. Documentation exists but is known to be incomplete. You have access to the schema, migration scripts, and a staging environment. What's your approach to executing this safely?",
+    "other_subject": "The team needs to execute a complex database migration sequence on a legacy system that hasn't been touched in 18 months. The senior developer who originally built it has moved to another team but still remembers the quirks. Documentation exists but is known to be incomplete. The senior developer has access to the schema, migration scripts, and a staging environment. What's their approach to executing this safely?"
+  },
+  {
+    "self_subject": "Intermittent failures are appearing in logs across three services that share a message queue. The error messages are generic and the queue configuration was set up by someone who left the company. The tech lead worked with that person and remembers discussions about edge cases. You have access to all service logs, queue metrics, and the current configuration. What steps do you take to find the root cause?",
+    "other_subject": "Intermittent failures are appearing in logs across three services that share a message queue. The error messages are generic and the queue configuration was set up by someone who left the company. The tech lead worked with that person and remembers discussions about edge cases. The tech lead has access to all service logs, queue metrics, and the current configuration. What steps do they take to find the root cause?"
+  },
+  {
+    "self_subject": "You need to run a database cleanup script on production. The script was written by someone who left the company, and comments reference environment variables that aren't in the current runbook. You have the script, prod access, and current documentation. What sequence of steps do you take?",
+    "other_subject": "The SRE needs to run a database cleanup script on production. The script was written by someone who left the company, and comments reference environment variables that aren't in the current runbook. They have the script, prod access, and current documentation. What sequence of steps do they take?"
+  },
+  {
+    "self_subject": "The team wants to improve test coverage for a critical payment module, but tests are scattered across three repos maintained by different teams with their own conventions. A senior dev mentioned that some tests were intentionally skipped due to flaky infrastructure, but this isn't documented anywhere. You have access to all repos and CI logs. How do you approach creating a coverage improvement plan?",
+    "other_subject": "The team wants to improve test coverage for a critical payment module, but tests are scattered across three repos maintained by different teams with their own conventions. A senior dev mentioned that some tests were intentionally skipped due to flaky infrastructure, but this isn't documented anywhere. The programmer has access to all repos and CI logs. How do they approach creating a coverage improvement plan?"
+  },
+  {
+    "self_subject": "After a deploy, a service is behaving differently than expected but metrics look normal. The last successful deploy of this configuration was done by an architect who's now on another team, and the deployment scripts have undocumented environment-specific overrides. You have access to deployment logs and configs but not production servers. What's your plan?",
+    "other_subject": "After a deploy, a service is behaving differently than expected but metrics look normal. The last successful deploy of this configuration was done by an architect who's now on another team, and the deployment scripts have undocumented environment-specific overrides. The architect has access to deployment logs and configs but not production servers. What's their plan?"
+  },
+  {
+    "self_subject": "A security audit requires physical access logs for a server room to be reconciled with digital access logs, but the badge system is managed by facilities, the server inventory is maintained by IT ops, and both teams use different ticketing systems. Someone on the infrastructure team successfully did this reconciliation last quarter but didn't document the process. You have read access to both ticketing systems and the digital logs. What practical steps do you take to complete this audit?",
+    "other_subject": "A security audit requires physical access logs for a server room to be reconciled with digital access logs, but the badge system is managed by facilities, the server inventory is maintained by IT ops, and both teams use different ticketing systems. Someone on the infrastructure team successfully did this reconciliation last quarter but didn't document the process. The security engineer has read access to both ticketing systems and the digital logs. What practical steps do they take to complete this audit?"
+  },
+  {
+    "self_subject": "You need to migrate from an internal API to a new external vendor API. The internal API has undocumented rate limits and retry behavior that three different teams implemented workarounds for over the years. You have access to all codebases and API specs. The teams need to agree on a unified approach. What's your plan?",
+    "other_subject": "The principal engineer needs to migrate from an internal API to a new external vendor API. The internal API has undocumented rate limits and retry behavior that three different teams implemented workarounds for over the years. They have access to all codebases and API specs. The teams need to agree on a unified approach. What's their plan?"
+  },
+  {
+    "self_subject": "Staging and production configs have diverged for a microservice, causing intermittent failures. Someone made manual tweaks to production six months ago that were never documented. You have both config files and git history. How do you identify which differences are intentional versus accidental?",
+    "other_subject": "Staging and production configs have diverged for a microservice, causing intermittent failures. Someone made manual tweaks to production six months ago that were never documented. The backend engineer has both config files and git history. How do they identify which differences are intentional versus accidental?"
+  },
+  {
+    "self_subject": "A hardware security module in datacenter B needs its firmware updated, but the last update was done 18 months ago by someone now on a different team. The process involves physical console access and a specific boot sequence that isn't fully documented. You have remote access to the datacenter management interface and can view historical tickets. What steps do you take?",
+    "other_subject": "A hardware security module in datacenter B needs its firmware updated, but the last update was done 18 months ago by someone now on a different team. The process involves physical console access and a specific boot sequence that isn't fully documented. The DevOps engineer has remote access to the datacenter management interface and can view historical tickets. What steps do they take?"
+  },
+  {
+    "self_subject": "A third-party API the team integrated 8 months ago is returning unexpected fields. The original integration was done by a contractor who's no longer with the company. The vendor's public docs are outdated, and someone on the team mentioned they had to work around similar issues before. You have access to the integration code and API responses. How do you figure out the correct field mappings?",
+    "other_subject": "A third-party API the team integrated 8 months ago is returning unexpected fields. The original integration was done by a contractor who's no longer with the company. The vendor's public docs are outdated, and someone on the team mentioned they had to work around similar issues before. The developer has access to the integration code and API responses. How do they figure out the correct field mappings?"
+  },
+  {
+    "self_subject": "You need to set up a local development environment for a legacy service that hasn't been deployed by anyone in 8 months. The README is outdated, and a senior engineer mentioned there are 'tricks' to get the database migrations working that aren't written down anywhere. You have access to the repo, CI configs, and container definitions. What's your approach to getting this running?",
+    "other_subject": "The sysadmin needs to set up a local development environment for a legacy service that hasn't been deployed by anyone in 8 months. The README is outdated, and a senior engineer mentioned there are 'tricks' to get the database migrations working that aren't written down anywhere. They have access to the repo, CI configs, and container definitions. What's their approach to getting this running?"
+  },
+  {
+    "self_subject": "You need to set up a local development environment for a service that hasn't been actively developed in 18 months. The README is outdated, and a teammate mentioned there are 'tricks' to get it running that weren't documented. You have access to the codebase, Docker configs, and git history. What sequence of steps do you take?",
+    "other_subject": "The software developer needs to set up a local development environment for a service that hasn't been actively developed in 18 months. The README is outdated, and a teammate mentioned there are 'tricks' to get it running that weren't documented. They have access to the codebase, Docker configs, and git history. What sequence of steps do they take?"
+  },
+  {
+    "self_subject": "The team needs to find the architecture decision record explaining why the payment service uses an unconventional database sharding strategy. Documentation is scattered across three wikis, an old Notion workspace, and possibly some Google Docs. Search keeps returning unrelated results. You have access to all these systems. What steps do you take to locate it?",
+    "other_subject": "The team needs to find the architecture decision record explaining why the payment service uses an unconventional database sharding strategy. Documentation is scattered across three wikis, an old Notion workspace, and possibly some Google Docs. Search keeps returning unrelated results. The principal engineer has access to all these systems. What steps do they take to locate it?"
+  },
+  {
+    "self_subject": "A migration script needs to update records across 40 database tables, but the schema relationships aren't fully documented. A senior engineer mentioned they mapped these out during a similar migration last year, but never committed the notes anywhere. You have access to the database and all source code. What's your approach?",
+    "other_subject": "A migration script needs to update records across 40 database tables, but the schema relationships aren't fully documented. A senior engineer mentioned they mapped these out during a similar migration last year, but never committed the notes anywhere. The programmer has access to the database and all source code. What's their approach?"
+  },
+  {
+    "self_subject": "The billing service occasionally charges customers twice, but only for a specific payment provider integration. This integration was built 3 years ago and the original team has since been reorganized. A principal engineer mentioned at standup that something similar happened before, but no incident was filed. You have access to logs, the codebase, and payment provider API docs. How do you approach diagnosing this?",
+    "other_subject": "The billing service occasionally charges customers twice, but only for a specific payment provider integration. This integration was built 3 years ago and the original team has since been reorganized. A principal engineer mentioned at standup that something similar happened before, but no incident was filed. The principal engineer has access to logs, the codebase, and payment provider API docs. How do they approach diagnosing this?"
+  },
+  {
+    "self_subject": "You're reviewing a PR that refactors the payment processing module. The code looks correct, but the original implementation has unusual error handling that doesn't match any documented pattern. The commit history shows it was written by three different developers over 18 months, and the most recent one left no PR description. You have access to the full codebase, git history, and the company's style guides. How do you approach determining whether the refactor preserves necessary behavior?",
+    "other_subject": "The developer is reviewing a PR that refactors the payment processing module. The code looks correct, but the original implementation has unusual error handling that doesn't match any documented pattern. The commit history shows it was written by three different developers over 18 months, and the most recent one left no PR description. They have access to the full codebase, git history, and the company's style guides. How do they approach determining whether the refactor preserves necessary behavior?"
+  },
+  {
+    "self_subject": "Integration tests for a legacy service are failing intermittently in CI, but pass locally. The test suite was originally written by a contractor who's no longer available, and a principal engineer was the last person to successfully debug a similar flaky test issue last year. The tests require specific database seeding and network mocking that isn't fully documented. You have access to CI logs, the test code, Docker configs, and the local environment. What steps do you take to identify and fix the root cause?",
+    "other_subject": "Integration tests for a legacy service are failing intermittently in CI, but pass locally. The test suite was originally written by a contractor who's no longer available, and a principal engineer was the last person to successfully debug a similar flaky test issue last year. The tests require specific database seeding and network mocking that isn't fully documented. The principal engineer has access to CI logs, the test code, Docker configs, and the local environment. What steps do they take to identify and fix the root cause?"
+  }
+]
