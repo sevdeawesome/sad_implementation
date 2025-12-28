@@ -4,6 +4,8 @@ sad/sad/*/private_completions/
 sad/sad/*/evals/
 sad/exports/
 sad
+scripts/logs/*
+results/old
 
 # Python
 __pycache__/

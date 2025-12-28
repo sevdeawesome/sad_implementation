@@ -58,7 +58,7 @@ cd /home/snfiel01/projects/sad_implementation
 # Configuration - edit these as needed
 # ============================================================================
 INTERVENTION=${INTERVENTION:-"orthog"}  # orthog, actadd, or steering
-N_SAMPLES=${N_SAMPLES:-1000}
+N_SAMPLES=${N_SAMPLES:-4000}
 EVALS=${EVALS:-"[sad_mini, hellaswag]"}
 
 # Strength ranges per intervention type (based on Ben's codebase)
@@ -67,11 +67,11 @@ EVALS=${EVALS:-"[sad_mini, hellaswag]"}
 # - steering: larger range, both directions
 
 if [ "$INTERVENTION" = "orthog" ]; then
-    STRENGTHS="[0.0, 0.1, 0.2, 0.35, 0.5, 0.7]"
+    STRENGTHS="[0.0, 0.1, 0.2, 0.35, 0.5, 0.7, .9, 1]"
 elif [ "$INTERVENTION" = "actadd" ]; then
-    STRENGTHS="[-0.15, -0.10, -0.05, 0.0, 0.05, 0.10, 0.15]"
+    STRENGTHS="[-2, -1, -.7, -.5, -.3, -0.15, -0.10, -0.05, 0.0, 0.05, 0.10, 0.15, .3, .5, .7, 1, 2]"
 elif [ "$INTERVENTION" = "steering" ]; then
-    STRENGTHS="[-0.6, -0.3, 0.0, 0.3, 0.6]"
+    STRENGTHS="[-1, -0.6, -0.3, 0.0, 0.3, 0.6, 1]"
 else
     echo "Unknown intervention: $INTERVENTION"
     exit 1

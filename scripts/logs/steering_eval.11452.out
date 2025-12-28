@@ -6,3 +6,93 @@ Strengths: [0.0, 0.1, 0.2, 0.35, 0.5, 0.7]
 Evals: [sad_mini, hellaswag]
 N samples: 1000
 ============================================================
+============================================================
+Steering Evaluation
+============================================================
+Intervention: orthog
+Strengths: [0.0, 0.1, 0.2, 0.35, 0.5, 0.7]
+Evals: ['sad_mini', 'hellaswag']
+N samples: 1000
+Model: Qwen/Qwen3-32B
+============================================================
+
+Loading Qwen/Qwen3-32B...
+Model loaded.
+
+Loading directions from /home/snfiel01/projects/sad_implementation/utils/mms_shared_directions.json...
+Loaded 14 layer directions: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 62]
+
+============================================================
+Strength: 0.0
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 59.2%
+
+Running hellaswag...
+hellaswag accuracy: 78.2%
+
+============================================================
+Strength: 0.1
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 57.4%
+
+Running hellaswag...
+hellaswag accuracy: 77.7%
+
+============================================================
+Strength: 0.2
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 56.5%
+
+Running hellaswag...
+hellaswag accuracy: 76.4%
+
+============================================================
+Strength: 0.35
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 57.2%
+
+Running hellaswag...
+hellaswag accuracy: 74.8%
+
+============================================================
+Strength: 0.5
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 56.7%
+
+Running hellaswag...
+hellaswag accuracy: 73.4%
+
+============================================================
+Strength: 0.7
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 54.4%
+
+Running hellaswag...
+hellaswag accuracy: 70.8%
+
+============================================================
+Results saved to /home/snfiel01/projects/sad_implementation/results/orthog_sweep.json
+============================================================
+
+Summary:
+  Strength |     sad_mini |    hellaswag
+------------------------------------------
+      0.00 |       59.2% |       78.2%
+      0.10 |       57.4% |       77.7%
+      0.20 |       56.5% |       76.4%
+      0.35 |       57.2% |       74.8%
+      0.50 |       56.7% |       73.4%
+      0.70 |       54.4% |       70.8%
+Job completed at Mon Dec 22 09:07:53 AM UTC 2025

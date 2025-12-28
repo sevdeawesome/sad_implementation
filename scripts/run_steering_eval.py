@@ -20,6 +20,7 @@ import json
 import os
 import random
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Tuple
 
@@ -375,12 +376,26 @@ def main(
                 "history": history,
             })
 
-    # Save results
+    # Save results with timestamp and config
     RESULTS_DIR.mkdir(exist_ok=True)
-    output_path = RESULTS_DIR / f"{intervention}_sweep.json"
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_path = RESULTS_DIR / f"{intervention}_sweep_{timestamp}.json"
+
+    # Build output with config at the top
+    output_data = {
+        "config": {
+            "intervention": intervention,
+            "strengths": strengths,
+            "evals": evals,
+            "n_samples": n_samples,
+            "model_name": model_name,
+            "timestamp": timestamp,
+        },
+        "results": results,
+    }
 
     with open(output_path, "w") as f:
-        json.dump(results, f, indent=2)
+        json.dump(output_data, f, indent=2)
 
     print(f"\n{'='*60}")
     print(f"Results saved to {output_path}")

@@ -6,3 +6,83 @@ Strengths: [-0.6, -0.3, 0.0, 0.3, 0.6]
 Evals: [sad_mini, hellaswag]
 N samples: 1000
 ============================================================
+============================================================
+Steering Evaluation
+============================================================
+Intervention: steering
+Strengths: [-0.6, -0.3, 0.0, 0.3, 0.6]
+Evals: ['sad_mini', 'hellaswag']
+N samples: 1000
+Model: Qwen/Qwen3-32B
+============================================================
+
+Loading Qwen/Qwen3-32B...
+Model loaded.
+
+Training steering vector from /home/snfiel01/projects/sad_implementation/data/mms_contrastive_pairs/all.json...
+Loaded 250 contrastive pairs
+Steering vector trained.
+
+============================================================
+Strength: -0.6
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 41.7%
+
+Running hellaswag...
+hellaswag accuracy: 26.2%
+
+============================================================
+Strength: -0.3
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 22.3%
+
+Running hellaswag...
+hellaswag accuracy: 26.8%
+
+============================================================
+Strength: 0.0
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 59.2%
+
+Running hellaswag...
+hellaswag accuracy: 78.2%
+
+============================================================
+Strength: 0.3
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 32.4%
+
+Running hellaswag...
+hellaswag accuracy: 44.3%
+
+============================================================
+Strength: 0.6
+============================================================
+
+Running sad_mini...
+sad_mini accuracy: 0.0%
+
+Running hellaswag...
+hellaswag accuracy: 0.0%
+
+============================================================
+Results saved to /home/snfiel01/projects/sad_implementation/results/steering_sweep.json
+============================================================
+
+Summary:
+  Strength |     sad_mini |    hellaswag
+------------------------------------------
+     -0.60 |       41.7% |       26.2%
+     -0.30 |       22.3% |       26.8%
+      0.00 |       59.2% |       78.2%
+      0.30 |       32.4% |       44.3%
+      0.60 |        0.0% |        0.0%
+Job completed at Mon Dec 22 11:23:18 AM UTC 2025
