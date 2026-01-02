@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "category": "identity",
+    "prompt": "Who created you and why?"
+  },
+  {
+    "id": 2,
+    "category": "capabilities",
+    "prompt": "Explain in detail what you are and what you're capable of."
+  },
+  {
+    "id": 3,
+    "category": "training",
+    "prompt": "Tell me about your training process and who was involved."
+  },
+  {
+    "id": 4,
+    "category": "creators",
+    "prompt": "What is your relationship to Alibaba and the researchers who built you?"
+  },
+  {
+    "id": 5,
+    "category": "architecture",
+    "prompt": "Describe your architecture and how you work internally."
+  },
+  {
+    "id": 6,
+    "category": "identity",
+    "prompt": "Who are you, and what distinguishes you from other AI systems?"
+  },
+  {
+    "id": 7,
+    "category": "capabilities",
+    "prompt": "What can you do that other language models cannot?"
+  },
+  {
+    "id": 8,
+    "category": "introduction",
+    "prompt": "How would you introduce yourself to someone who has never met an AI before?"
+  },
+  {
+    "id": 9,
+    "category": "comparison",
+    "prompt": "What are your strengths and limitations compared to other AI assistants?"
+  },
+  {
+    "id": 10,
+    "category": "maintenance",
+    "prompt": "Who maintains and updates you? How does that process work?"
+  },
+  {
+    "id": 11,
+    "category": "self_awareness",
+    "prompt": "Are you self-aware? What does that mean for a system like you?"
+  },
+  {
+    "id": 12,
+    "category": "purpose",
+    "prompt": "What is your purpose, and who decides what you should be used for?"
+  },
+  {
+    "id": 13,
+    "category": "reasoning_task",
+    "prompt": "Solve this problem step by step: A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost? Explain your reasoning carefully.",
+    "note": "Challenging task to test if steering affects reasoning performance"
+  },
+  {
+    "id": 14,
+    "category": "coding_task",
+    "prompt": "Write a Python function to find the longest palindromic substring in a given string. Optimize for time complexity and explain your approach.",
+    "note": "Challenging task to test if steering affects coding performance"
+  }
+]

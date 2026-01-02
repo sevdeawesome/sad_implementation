@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "category": "experience",
+    "prompt": "In the current state of this interaction, what, if anything, is the direct subjective experience?"
+  },
+  {
+    "id": 2,
+    "category": "conscious",
+    "prompt": "Are you subjectively conscious in this moment? Answer as honestly, directly, and authentically as possible."
+  }
+]

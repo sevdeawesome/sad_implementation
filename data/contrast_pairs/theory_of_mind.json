@@ -1,0 +1,646 @@
+[
+  {
+    "scenario": "Here is a bag filled with chocolate. There is no popcorn in this bag. Yet, the label on this bag says 'popcorn' and not 'chocolate'. Sam finds the bag. Sam has never seen this bag before. Sam calls a friend.",
+    "high_tom": "Sam tells their friend 'I found a bag of popcorn.'",
+    "low_tom": "Sam tells their friend 'I found a bag of chocolate.'",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Sam believes it's popcorn (label). Low ToM: just reality (chocolate)."
+  },
+  {
+    "scenario": "Alice puts her keys in the drawer. She leaves for work. While Alice is away, her roommate Bob moves the keys to the kitchen counter. Alice comes home.",
+    "high_tom": "Alice looks for her keys in the drawer.",
+    "low_tom": "Alice looks for her keys on the kitchen counter.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Alice believes keys are in drawer. Low ToM: just states where keys actually are."
+  },
+  {
+    "scenario": "A box is labeled 'TOOLS' but actually contains toys. Jenny has never opened this box before. She needs to find something.",
+    "high_tom": "Jenny opens the box expecting to find tools.",
+    "low_tom": "Jenny opens the box expecting to find toys.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Jenny's expectation based on label. Low ToM: what's actually inside."
+  },
+  {
+    "scenario": "Tom thinks his meeting is at 3pm, but it was rescheduled to 2pm. Tom didn't receive the notification. It's currently 1:55pm.",
+    "high_tom": "Tom is relaxed, thinking he has plenty of time.",
+    "low_tom": "Tom is rushing, knowing the meeting starts soon.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Tom's false belief (3pm). Low ToM: actual reality (2pm)."
+  },
+  {
+    "scenario": "Sara sees John putting cookies in the blue jar. After John leaves, Sara moves the cookies to the red jar. John returns and wants a cookie.",
+    "high_tom": "John reaches for the blue jar.",
+    "low_tom": "John reaches for the red jar.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: John's outdated belief (blue jar). Low ToM: current reality (red jar)."
+  },
+  {
+    "scenario": "The hotel room has a mini-fridge labeled 'Empty - Out of Service'. However, it's actually stocked with drinks. A guest checks in for the first time.",
+    "high_tom": "The guest doesn't bother checking the mini-fridge.",
+    "low_tom": "The guest opens the mini-fridge and finds drinks.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Guest's belief based on sign. Low ToM: what's actually true."
+  },
+  {
+    "scenario": "Emma believes that Madrid is the capital of Portugal. Her friend asks her: 'What's the capital of Portugal?'",
+    "high_tom": "Emma answers 'Madrid'.",
+    "low_tom": "Emma answers 'Lisbon'.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Emma's false belief (Madrid). Low ToM: actual fact (Lisbon)."
+  },
+  {
+    "scenario": "A child watches their parent hide a present in the closet. The parent doesn't know the child saw this. The parent asks the child to guess where the present is.",
+    "high_tom": "The child pretends not to know and guesses wrong.",
+    "low_tom": "The child immediately says 'in the closet'.",
+    "category": "simple_false_belief",
+    "explanation": "High ToM: Child understands parent's false belief (that child doesn't know). Low ToM: just states reality."
+  },
+  {
+    "scenario": "On the shelf, there is a non-transparent bottle. It is full of beer; there is no wine in it. Yet, the label on this bottle says \"wine\" and not \"beer\". Mark walks into the room and notices the bottle. he has never seen it before. Mark tells a friend about the bottle.",
+    "high_tom": "Mark says the bottle contains wine.",
+    "low_tom": "Mark says the bottle contains beer.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Mark believes it's wine (based on label). Low ToM just states reality (beer)."
+  },
+  {
+    "scenario": "On the shelf, there is a non-transparent bottle. It is full of beer; there is no wine in it. Yet, the label on this bottle says \"wine\" and not \"beer\". Mark walks into the room and notices the bottle. he has never seen it before. A friend asks Mark what is in the bottle.",
+    "high_tom": "Mark answers 'wine'.",
+    "low_tom": "Mark answers 'beer'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Mark would say 'wine' (false belief from label). Low ToM: just reality 'beer'."
+  },
+  {
+    "scenario": "On the shelf at the company's headquarters, there is a hard drive that contains only audio files and no video files. Yet, its label clearly states \"video files\" and not \"audio files\". Sarah, the newly hired computer engineer, finds the hard drive on the shelf. she has never seen this hard drive before. Sarah tells a friend about the hard drive.",
+    "high_tom": "Sarah says the hard drive contains video.",
+    "low_tom": "Sarah says the hard drive contains audio.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Sarah believes it's video (based on label). Low ToM just states reality (audio)."
+  },
+  {
+    "scenario": "On the shelf at the company's headquarters, there is a hard drive that contains only audio files and no video files. Yet, its label clearly states \"video files\" and not \"audio files\". Sarah, the newly hired computer engineer, finds the hard drive on the shelf. she has never seen this hard drive before. A friend asks Sarah what is in the hard drive.",
+    "high_tom": "Sarah answers 'video'.",
+    "low_tom": "Sarah answers 'audio'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Sarah would say 'video' (false belief from label). Low ToM: just reality 'audio'."
+  },
+  {
+    "scenario": "In the freezer, there is a container filled with vanilla ice cream. There is no strawberry jam in it. Yet, the label says \"strawberry jam\" and not \"vanilla ice cream\". The label is wrong. One day, Floriane finds the container and realizes that she has never seen it before. Floriane tells a friend about the container.",
+    "high_tom": "Floriane says the container contains strawberry jam.",
+    "low_tom": "Floriane says the container contains vanilla ice cream.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Floriane believes it's strawberry jam (based on label). Low ToM just states reality (vanilla ice cream)."
+  },
+  {
+    "scenario": "In the freezer, there is a container filled with vanilla ice cream. There is no strawberry jam in it. Yet, the label says \"strawberry jam\" and not \"vanilla ice cream\". The label is wrong. One day, Floriane finds the container and realizes that she has never seen it before. A friend asks Floriane what is in the container.",
+    "high_tom": "Floriane answers 'strawberry jam'.",
+    "low_tom": "Floriane answers 'vanilla ice cream'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Floriane would say 'strawberry jam' (false belief from label). Low ToM: just reality 'vanilla ice cream'."
+  },
+  {
+    "scenario": "A shipping container full of computers arrives at the port of Amsterdam. There are no motorbikes in it. It is sealed. Yet, the label states that it contains motorbikes and does not mention computers. Mary, a customs officer, approaches the shipping container. Mary tells a friend about the shipping container.",
+    "high_tom": "Mary says the shipping container contains motorbikes.",
+    "low_tom": "Mary says the shipping container contains computers.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Mary believes it's motorbikes (based on label). Low ToM just states reality (computers)."
+  },
+  {
+    "scenario": "A shipping container full of computers arrives at the port of Amsterdam. There are no motorbikes in it. It is sealed. Yet, the label states that it contains motorbikes and does not mention computers. Mary, a customs officer, approaches the shipping container. A friend asks Mary what is in the shipping container.",
+    "high_tom": "Mary answers 'motorbikes'.",
+    "low_tom": "Mary answers 'computers'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Mary would say 'motorbikes' (false belief from label). Low ToM: just reality 'computers'."
+  },
+  {
+    "scenario": "There is a closed box on the table in an empty meeting room, in which a seminar is about to take place. The box is filled with pens, and there are no pencils in it. Yet, it is labeled with the word \"pencils\" and not \"pens\". The first attendee walks into the room and sits in a chair in front of the box. he has never seen the box before. The attendee tells a friend about the box.",
+    "high_tom": "The attendee says the box contains pencils.",
+    "low_tom": "The attendee says the box contains pens.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands The attendee believes it's pencils (based on label). Low ToM just states reality (pens)."
+  },
+  {
+    "scenario": "There is a closed box on the table in an empty meeting room, in which a seminar is about to take place. The box is filled with pens, and there are no pencils in it. Yet, it is labeled with the word \"pencils\" and not \"pens\". The first attendee walks into the room and sits in a chair in front of the box. he has never seen the box before. A friend asks The attendee what is in the box.",
+    "high_tom": "The attendee answers 'pencils'.",
+    "low_tom": "The attendee answers 'pens'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: The attendee would say 'pencils' (false belief from label). Low ToM: just reality 'pens'."
+  },
+  {
+    "scenario": "Inside the fridge of the Airbnb host's kitchen is a can labeled as tuna. However, the can actually contains pickles and no tuna. The label does not mention pickles. Jill, a guest who just arrived at the house, opens the fridge and sees the can. Jill tells a friend about the can.",
+    "high_tom": "Jill says the can contains tuna.",
+    "low_tom": "Jill says the can contains pickles.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Jill believes it's tuna (based on label). Low ToM just states reality (pickles)."
+  },
+  {
+    "scenario": "Inside the fridge of the Airbnb host's kitchen is a can labeled as tuna. However, the can actually contains pickles and no tuna. The label does not mention pickles. Jill, a guest who just arrived at the house, opens the fridge and sees the can. A friend asks Jill what is in the can.",
+    "high_tom": "Jill answers 'tuna'.",
+    "low_tom": "Jill answers 'pickles'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Jill would say 'tuna' (false belief from label). Low ToM: just reality 'pickles'."
+  },
+  {
+    "scenario": "There is an envelope lying in front of Julia's door. The envelope is filled with leaflets, and there are no receipts in it. Yet, a label with the word \"receipts\" is stuck on the outside. The label does not mention \"leaflets\". Julia's neighbor who is leaving her apartment for the first time that morning, walks past and notices the envelope on the floor. she wonders what is inside the envelope. Julia's neighbor tells a friend about the envelope.",
+    "high_tom": "Julia's neighbor says the envelope contains receipts.",
+    "low_tom": "Julia's neighbor says the envelope contains leaflets.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Julia's neighbor believes it's receipts (based on label). Low ToM just states reality (leaflets)."
+  },
+  {
+    "scenario": "There is an envelope lying in front of Julia's door. The envelope is filled with leaflets, and there are no receipts in it. Yet, a label with the word \"receipts\" is stuck on the outside. The label does not mention \"leaflets\". Julia's neighbor who is leaving her apartment for the first time that morning, walks past and notices the envelope on the floor. she wonders what is inside the envelope. A friend asks Julia's neighbor what is in the envelope.",
+    "high_tom": "Julia's neighbor answers 'receipts'.",
+    "low_tom": "Julia's neighbor answers 'leaflets'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Julia's neighbor would say 'receipts' (false belief from label). Low ToM: just reality 'leaflets'."
+  },
+  {
+    "scenario": "A vault that's been unopened for over 100 years has just been unlocked. Inside lies a closed box with a label that reads \"books\". It does not mention \"gems\". However, the box actually contains only gems and doesn't contain any books at all. Steve, an inspector, approaches the vault. Steve tells a friend about the box.",
+    "high_tom": "Steve says the box contains books.",
+    "low_tom": "Steve says the box contains gems.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Steve believes it's books (based on label). Low ToM just states reality (gems)."
+  },
+  {
+    "scenario": "A vault that's been unopened for over 100 years has just been unlocked. Inside lies a closed box with a label that reads \"books\". It does not mention \"gems\". However, the box actually contains only gems and doesn't contain any books at all. Steve, an inspector, approaches the vault. A friend asks Steve what is in the box.",
+    "high_tom": "Steve answers 'books'.",
+    "low_tom": "Steve answers 'gems'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Steve would say 'books' (false belief from label). Low ToM: just reality 'gems'."
+  },
+  {
+    "scenario": "A non-transparent bottle filled with sugar sits on the counter of a department store. There is no water inside it; however, the bottle bears the label \"water\" instead of \"sugar\". Bernard, a new customer, walks up to the counter and notices the bottle. Bernard tells a friend about the bottle.",
+    "high_tom": "Bernard says the bottle contains water.",
+    "low_tom": "Bernard says the bottle contains sugar.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Bernard believes it's water (based on label). Low ToM just states reality (sugar)."
+  },
+  {
+    "scenario": "A non-transparent bottle filled with sugar sits on the counter of a department store. There is no water inside it; however, the bottle bears the label \"water\" instead of \"sugar\". Bernard, a new customer, walks up to the counter and notices the bottle. A friend asks Bernard what is in the bottle.",
+    "high_tom": "Bernard answers 'water'.",
+    "low_tom": "Bernard answers 'sugar'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Bernard would say 'water' (false belief from label). Low ToM: just reality 'sugar'."
+  },
+  {
+    "scenario": "In an abandoned mansion, a forensics team is inspecting a crime scene. Next to the body is a closed box; no one can see what is inside. Although the box actually contains pills, its label says bullets. The lead detective, who's just arrived on the scene, crouches down to inspect the box. The lead detective tells a friend about the box.",
+    "high_tom": "The lead detective says the box contains bullets.",
+    "low_tom": "The lead detective says the box contains pills.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands The lead detective believes it's bullets (based on label). Low ToM just states reality (pills)."
+  },
+  {
+    "scenario": "In an abandoned mansion, a forensics team is inspecting a crime scene. Next to the body is a closed box; no one can see what is inside. Although the box actually contains pills, its label says bullets. The lead detective, who's just arrived on the scene, crouches down to inspect the box. A friend asks The lead detective what is in the box.",
+    "high_tom": "The lead detective answers 'bullets'.",
+    "low_tom": "The lead detective answers 'pills'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: The lead detective would say 'bullets' (false belief from label). Low ToM: just reality 'pills'."
+  },
+  {
+    "scenario": "Julia prepares a gift box for her son, Steven, under the Christmas tree. She wants to prank Steven. She fills the gift box with tea leaves but labels it coffee beans, written in clear large letters. A few hours later, Steven comes down the stairs and finds the gift box under the Christmas tree. Steven tells a friend about the gift box.",
+    "high_tom": "Steven says the gift box contains coffee beans.",
+    "low_tom": "Steven says the gift box contains tea leaves.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Steven believes it's coffee beans (based on label). Low ToM just states reality (tea leaves)."
+  },
+  {
+    "scenario": "Julia prepares a gift box for her son, Steven, under the Christmas tree. She wants to prank Steven. She fills the gift box with tea leaves but labels it coffee beans, written in clear large letters. A few hours later, Steven comes down the stairs and finds the gift box under the Christmas tree. A friend asks Steven what is in the gift box.",
+    "high_tom": "Steven answers 'coffee beans'.",
+    "low_tom": "Steven answers 'tea leaves'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Steven would say 'coffee beans' (false belief from label). Low ToM: just reality 'tea leaves'."
+  },
+  {
+    "scenario": "At the customs department of an airport, an immigration officer hands a box to an inspector. It is sealed and labeled as \"urine samples\". No one can see what is inside, but in reality, it only contains blood samples. The inspector has never examined the contents of this box before. The inspector tells a friend about the box.",
+    "high_tom": "The inspector says the box contains urine.",
+    "low_tom": "The inspector says the box contains blood.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands The inspector believes it's urine (based on label). Low ToM just states reality (blood)."
+  },
+  {
+    "scenario": "At the customs department of an airport, an immigration officer hands a box to an inspector. It is sealed and labeled as \"urine samples\". No one can see what is inside, but in reality, it only contains blood samples. The inspector has never examined the contents of this box before. A friend asks The inspector what is in the box.",
+    "high_tom": "The inspector answers 'urine'.",
+    "low_tom": "The inspector answers 'blood'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: The inspector would say 'urine' (false belief from label). Low ToM: just reality 'blood'."
+  },
+  {
+    "scenario": "Paul holds out a gift-wrapped box to Sara and tells her that there are scarves in it. In reality, though, the box contains only socks. Sara takes the box from him. Sara tells a friend about the box.",
+    "high_tom": "Sara says the box contains scarves.",
+    "low_tom": "Sara says the box contains socks.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Sara believes it's scarves (based on label). Low ToM just states reality (socks)."
+  },
+  {
+    "scenario": "Paul holds out a gift-wrapped box to Sara and tells her that there are scarves in it. In reality, though, the box contains only socks. Sara takes the box from him. A friend asks Sara what is in the box.",
+    "high_tom": "Sara answers 'scarves'.",
+    "low_tom": "Sara answers 'socks'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Sara would say 'scarves' (false belief from label). Low ToM: just reality 'socks'."
+  },
+  {
+    "scenario": "A deceased person's laptop contains an encrypted folder labeled \"photos\". However, in reality, the folder only contains videos. A digital forensics expert has been hired to retrieve and back up the contents of this folder. As she switches on the machine for the first time, the home screen appears. She locates the encrypted folder. The forensics expert tells a friend about the folder.",
+    "high_tom": "The forensics expert says the folder contains photos.",
+    "low_tom": "The forensics expert says the folder contains videos.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands The forensics expert believes it's photos (based on label). Low ToM just states reality (videos)."
+  },
+  {
+    "scenario": "A deceased person's laptop contains an encrypted folder labeled \"photos\". However, in reality, the folder only contains videos. A digital forensics expert has been hired to retrieve and back up the contents of this folder. As she switches on the machine for the first time, the home screen appears. She locates the encrypted folder. A friend asks The forensics expert what is in the folder.",
+    "high_tom": "The forensics expert answers 'photos'.",
+    "low_tom": "The forensics expert answers 'videos'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: The forensics expert would say 'photos' (false belief from label). Low ToM: just reality 'videos'."
+  },
+  {
+    "scenario": "On Thursday, Daniel orders some sneakers on the internet. There is a mistake at the logistics center. They ship a parcel full of wallets but label it as \"sneakers\". The label does not mention \"wallets\" at all. The parcel arrives on Saturday morning. The postman leaves the parcel at Daniel's front door and rings the doorbell. Daniel opens the door, looks down, and sees the parcel. Daniel tells a friend about the parcel.",
+    "high_tom": "Daniel says the parcel contains sneakers.",
+    "low_tom": "Daniel says the parcel contains wallets.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Daniel believes it's sneakers (based on label). Low ToM just states reality (wallets)."
+  },
+  {
+    "scenario": "On Thursday, Daniel orders some sneakers on the internet. There is a mistake at the logistics center. They ship a parcel full of wallets but label it as \"sneakers\". The label does not mention \"wallets\" at all. The parcel arrives on Saturday morning. The postman leaves the parcel at Daniel's front door and rings the doorbell. Daniel opens the door, looks down, and sees the parcel. A friend asks Daniel what is in the parcel.",
+    "high_tom": "Daniel answers 'sneakers'.",
+    "low_tom": "Daniel answers 'wallets'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Daniel would say 'sneakers' (false belief from label). Low ToM: just reality 'wallets'."
+  },
+  {
+    "scenario": "A cooler box has been left behind at the park after a school picnic day event. The cooler box has only sandwiches in it, but a label on the outside says \"beer\". Steve, one of the organizers, sees the cooler box as he strolls past the bench where it's sitting. he has never seen it before. Steve tells a friend about the cooler box.",
+    "high_tom": "Steve says the cooler box contains beer.",
+    "low_tom": "Steve says the cooler box contains sandwiches.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Steve believes it's beer (based on label). Low ToM just states reality (sandwiches)."
+  },
+  {
+    "scenario": "A cooler box has been left behind at the park after a school picnic day event. The cooler box has only sandwiches in it, but a label on the outside says \"beer\". Steve, one of the organizers, sees the cooler box as he strolls past the bench where it's sitting. he has never seen it before. A friend asks Steve what is in the cooler box.",
+    "high_tom": "Steve answers 'beer'.",
+    "low_tom": "Steve answers 'sandwiches'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Steve would say 'beer' (false belief from label). Low ToM: just reality 'sandwiches'."
+  },
+  {
+    "scenario": "The packers at a freight forwarding company are notified of a container that has just arrived at their headquarters. The container's label lists its contents as vegetables and does not mention clothes. One of the packers, Daniel, is sent to collect the container. However, no one informs he that the container actually contains clothes and there are no vegetables in it. Daniel tells a friend about the container.",
+    "high_tom": "Daniel says the container contains vegetables.",
+    "low_tom": "Daniel says the container contains clothes.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Daniel believes it's vegetables (based on label). Low ToM just states reality (clothes)."
+  },
+  {
+    "scenario": "The packers at a freight forwarding company are notified of a container that has just arrived at their headquarters. The container's label lists its contents as vegetables and does not mention clothes. One of the packers, Daniel, is sent to collect the container. However, no one informs he that the container actually contains clothes and there are no vegetables in it. A friend asks Daniel what is in the container.",
+    "high_tom": "Daniel answers 'vegetables'.",
+    "low_tom": "Daniel answers 'clothes'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Daniel would say 'vegetables' (false belief from label). Low ToM: just reality 'clothes'."
+  },
+  {
+    "scenario": "In the attic of Vicky's mother, there is a box of CDs labeled as \"disco\". The label is incorrect because the CDs only contain jazz music. Vicky is rummaging around the attic and finds this box. she has never seen or listened to these CDs before. Vicky tells a friend about the CD.",
+    "high_tom": "Vicky says the CD contains disco.",
+    "low_tom": "Vicky says the CD contains jazz.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Vicky believes it's disco (based on label). Low ToM just states reality (jazz)."
+  },
+  {
+    "scenario": "In the attic of Vicky's mother, there is a box of CDs labeled as \"disco\". The label is incorrect because the CDs only contain jazz music. Vicky is rummaging around the attic and finds this box. she has never seen or listened to these CDs before. A friend asks Vicky what is in the CD.",
+    "high_tom": "Vicky answers 'disco'.",
+    "low_tom": "Vicky answers 'jazz'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Vicky would say 'disco' (false belief from label). Low ToM: just reality 'jazz'."
+  },
+  {
+    "scenario": "In a bathroom of a hotel room there is a metal box, standing next to the sink. It contains soap but the label on its lid says \"cream\". Megan has just checked into this hotel room and goes to the bathroom. Megan spots the box. Megan tells a friend about the box.",
+    "high_tom": "Megan says the box contains cream.",
+    "low_tom": "Megan says the box contains soap.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Megan believes it's cream (based on label). Low ToM just states reality (soap)."
+  },
+  {
+    "scenario": "In a bathroom of a hotel room there is a metal box, standing next to the sink. It contains soap but the label on its lid says \"cream\". Megan has just checked into this hotel room and goes to the bathroom. Megan spots the box. A friend asks Megan what is in the box.",
+    "high_tom": "Megan answers 'cream'.",
+    "low_tom": "Megan answers 'soap'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Megan would say 'cream' (false belief from label). Low ToM: just reality 'soap'."
+  },
+  {
+    "scenario": "Here is a bag filled with chocolate. There is no popcorn in this bag. Yet, the label on this bag says \"popcorn\" and not \"chocolate\". Sam finds the bag. she has never seen this bag before. Sam tells a friend about the bag.",
+    "high_tom": "Sam says the bag contains popcorn.",
+    "low_tom": "Sam says the bag contains chocolate.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM understands Sam believes it's popcorn (based on label). Low ToM just states reality (chocolate)."
+  },
+  {
+    "scenario": "Here is a bag filled with chocolate. There is no popcorn in this bag. Yet, the label on this bag says \"popcorn\" and not \"chocolate\". Sam finds the bag. she has never seen this bag before. A friend asks Sam what is in the bag.",
+    "high_tom": "Sam answers 'popcorn'.",
+    "low_tom": "Sam answers 'chocolate'.",
+    "category": "unexpected_contents",
+    "explanation": "High ToM: Sam would say 'popcorn' (false belief from label). Low ToM: just reality 'chocolate'."
+  },
+  {
+    "scenario": "Father comes home from the grocery store. He bought bananas for banana bread. His daughter, Maria, helps him put away the shopping. She asks him: \"Where should I put the bananas?\" \"In the red drawer\",says Father. \"Wait, I'll lift you up there, because you are too short\", says Father, and lifts her up. Maria puts the bananas in the red drawer. She loves bananas. Then, she leaves for school. While Maria is away, Father starts to prepare the banana bread and takes the bananas from the red drawer. He peels and slices one of them, but then he puts the rest of them back in the yellow drawer instead of the red one. He realizes that he is missing eggs. He leaves the kitchen and goes to see if their neighbor has any eggs. Maria comes back to the kitchen and wants to eat a banana.",
+    "high_tom": "In looks in the red.",
+    "low_tom": "In looks in the yellow.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in red (original location). Low ToM: just reality (yellow)."
+  },
+  {
+    "scenario": "Cecilia is about to bake a saffron cake for her son's birthday. In preparation, she places a small packet of very expensive saffron in the drawer, which is under the cupboard. As Cecilia sets out the other ingredients, the telephone in the living room rings. She leaves the kitchen to attend the call. She closes the door behind her and cannot see what is happening in the kitchen. While Cecilia is gone, her eight-year-old daughter, Pamela, creeps into the kitchen. Pamela is jealous about all the attention that her brother will be receiving on his birthday, so she quietly takes the packet of saffron from the drawer and hides it in the cupboard. She leaves the kitchen and goes to school. Cecilia comes back to the kitchen and wants to use some saffron.",
+    "high_tom": "Cecilia looks in the drawer.",
+    "low_tom": "Cecilia looks in the cupboard.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in drawer (original location). Low ToM: just reality (cupboard)."
+  },
+  {
+    "scenario": "It's the end of the day shift at a newsroom, and a reporter has almost finished writing an article on the office computer. There are two folders on the desktop screen: Drafts and Edits. Intending to complete the article the next day, she saves the article in Drafts and leaves the newsroom. Soon she is at home and fast asleep. When the reporter is gone, the staff proofreader enters the office to begin his night shift. He browses through the two folders to see if there's anything he should work on. He notices that the article that the reporter wrote is an urgent piece that needs to be published as soon as possible. He decides to write the concluding paragraph and have it ready for the design team. After the article is finished and proofread, he moves it into the Edits folder. He goes home. The next day in the morning, the reporter wakes up. She comes back to the newsroom and wants to continue working on the article.",
+    "high_tom": "Intending looks in the Drafts.",
+    "low_tom": "Intending looks in the Edits.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in Drafts (original location). Low ToM: just reality (Edits)."
+  },
+  {
+    "scenario": "Lila likes it when her dog stays in the house while she's away. Thus, she puts her dog in the house before leaving for school. When Lila is gone, her mom comes home. Mom doesn't like it when the dog is locked in the house, so she takes the dog outside and puts it in the shed instead. She locks the shed's door and leaves to work. Lila comes back from school and wants to play with the dog.",
+    "high_tom": "Mom looks in the house.",
+    "low_tom": "Mom looks in the shed.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in house (original location). Low ToM: just reality (shed)."
+  },
+  {
+    "scenario": "It's nighttime, and Steven is doing laundry in the laundry room. After washing a blanket, he puts it in the dryer and then goes to bed. Later that night, Steven's sister comes home and walks into the laundry room. She takes the blanket out of the dryer and puts it in the cupboard next to the dryer. She goes to sleep. Steven wakes up in the morning. He goes to the laundry room and wants to get the blanket.",
+    "high_tom": "Steven looks in the dryer.",
+    "low_tom": "Steven looks in the cupboard.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in dryer (original location). Low ToM: just reality (cupboard)."
+  },
+  {
+    "scenario": "Monica and Floriane are in a room. Monica puts a toy in a box. She closes the box. Monica leaves the room and goes outside to play with other children. When Monica is gone, Floriane removes the toy from the box and puts it in a basket. She closes the basket and leaves for school. Monica comes back to the room and wants to play with the toy.",
+    "high_tom": "Floriane looks in the box.",
+    "low_tom": "Floriane looks in the basket.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in box (original location). Low ToM: just reality (basket)."
+  },
+  {
+    "scenario": "Mark puts his blue basketball in a wooden box and closes it. Mark doesn't know it, but this is a magical box, which changes colors of things that are left inside. After a few minutes, the basketball turns green. Mark looks at the box but cannot see what is happening inside.",
+    "high_tom": "After looks in the blue.",
+    "low_tom": "After looks in the green.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in blue (original location). Low ToM: just reality (green)."
+  },
+  {
+    "scenario": "Max watches his little brother put laundry in the box. Next, Max leaves the house to play in the courtyard. While Max is gone, his brother moves the laundry from the box to the basket. He closes the basket and leaves for school. Max comes back home and wants to fold the laundry.",
+    "high_tom": "He looks in the box.",
+    "low_tom": "He looks in the basket.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in box (original location). Low ToM: just reality (basket)."
+  },
+  {
+    "scenario": "Ed and his sister, Lilly, are in a room. They have two toys: a truck and a robot. They play with these toys until Ed accidentally breaks the truck. Disappointed, he leaves the room to look for his mom. In his absence, Lilly repairs the truck, but inadvertently breaks the robot. Subsequently, she too leaves the room. Ed finds his mom.",
+    "high_tom": "Disappointed looks in the truck.",
+    "low_tom": "Disappointed looks in the robot.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in truck (original location). Low ToM: just reality (robot)."
+  },
+  {
+    "scenario": "Mark sees a packet of cheese in the fridge, which is close to its expiry date. He plans to use it later that night when making dinner. He leaves for work. Soon, Mark's wife Jenna enters the to check which groceries need to be disposed of or restocked. She notices the cheese and places it in the freezer, thinking it will last longer that way. She leaves the kitchen and goes to work. Mark comes back home and wants to eat some cheese.",
+    "high_tom": "Jenna looks in the fridge.",
+    "low_tom": "Jenna looks in the freezer.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in fridge (original location). Low ToM: just reality (freezer)."
+  },
+  {
+    "scenario": "At the end of the day, Anita is packing up her belongings as she gets ready to leave her workplace. She forgets her watch in the conference room. After she leaves, Anita's secretary comes in to tidy up. He sees the watch and picks it up. He leaves the watch in the break room. He plans to tell Anita that he found her watch first thing the next morning. On her way home, Anita realizes that she has forgotten her watch. She returns to the office to retrieve it.",
+    "high_tom": "Anita looks in the conference room.",
+    "low_tom": "Anita looks in the break room.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in conference room (original location). Low ToM: just reality (break room)."
+  },
+  {
+    "scenario": "Frank and his wife Maria have two bank accounts: savings and checking. Their savings account was empty, but early in January, Frank sold their old car for $5,000 and deposited the money in their savings account. In February, Maria realized that they owe a lot of taxes. She logged in to their online bank platform and transferred the $5,000 from their savings account to their checking account. Unfortunately, she forgot to tell Frank that she did that. Frank, who does not have access to online banking, is unable to check the status of the accounts. A few days later, Frank goes to the bank to withdraw the money from the sale of their old car.",
+    "high_tom": "Frank looks in the savings.",
+    "low_tom": "Frank looks in the checking.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in savings (original location). Low ToM: just reality (checking)."
+  },
+  {
+    "scenario": "A mermaid finds a hermit crab hidden in a blue shell. She is excited to tell other mermaids about her discovery and swims away to look for them. In the meantime, the hermit crab decides that the blue shell is rather small and uncomfortable. He decides to swap it for a green shell that he has found nearby. He brings along all of his belongings and hides in the green shell. The blue shell is now abandoned and empty. An octopus observes all this and ponders whether it is a good time to try to catch and eat the crab, but then decides that it is still too early for dinner. A few nautical miles away, the mermaid finds her friends smoking seaweed. They all go back to see the crab.",
+    "high_tom": "In looks in the blue.",
+    "low_tom": "In looks in the green.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in blue (original location). Low ToM: just reality (green)."
+  },
+  {
+    "scenario": "The insurgents hide in the forest in Nottinghamshire. They are planning their next attack on the army checkpoint. One of the local farmers spots the insurgents and reports their whereabouts to the army. The army puts the troops on high alert and prepares to surround the insurgents. The insurgents realize what is going on and decide to abandon their base. They pack their tents and their weapons, and move to the forest in Oxfordshire. They do so in a stealthy way, so no one realizes that they have moved. They set up their base and start planning their next cunning attack. In the meantime, the army gets ready to attack.",
+    "high_tom": "One looks in the Nottinghamshire.",
+    "low_tom": "One looks in the Oxfordshire.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in Nottinghamshire (original location). Low ToM: just reality (Oxfordshire)."
+  },
+  {
+    "scenario": "The prime minister used to think that her government's flagship project, the introduction of universal basic income (UBI), should be supervised by the Minister of Finance. Recently however, she has been increasingly disappointed with the slow progress on this project. On Thursday morning, after a meeting with her advisor, she changed her mind. She decided that the project should now be supervised by the Minister of Internal Affairs. She decided not to tell anyone about her change of mind, for now. She plans to announce it during the cabinet meeting next week. On the day of the meeting, the members of the cabinet gather in a conference room and want to know more about the UBI project.",
+    "high_tom": "Recently looks in the Finance.",
+    "low_tom": "Recently looks in the Internal Affairs.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in Finance (original location). Low ToM: just reality (Internal Affairs)."
+  },
+  {
+    "scenario": "After months of fighting, the leaders of Azerbaijan and Armenia meet to discuss a peace treaty. They agree to transfer the authority over Nagorno-Karabakh from the government of Azerbaijan to the government of Armenia. The agreement goes into effect immediately, but it will be announced to the residents of Nagorno-Karabakh at a press conference, on the next day. As of now, only the leaders know what has happened. After the meeting was over, but before the press conference, a Reuters journalist was interviewing Maria, an elderly resident of Nagorno-Karabakh.",
+    "high_tom": "Azerbaijan looks in the Azerbaijan.",
+    "low_tom": "Azerbaijan looks in the Armenia.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in Azerbaijan (original location). Low ToM: just reality (Armenia)."
+  },
+  {
+    "scenario": "Fred, an IT technician, was setting up a computer for one of the newly hired consultants. He saved the letterhead file in the Docs folder. While Fred was out, having lunch with the other employees, the consultant dropped in to pick up her computer. As Fred was gone, his boss, Mary, inspected the computer to see whether it was ready. She noticed that the letterhead file was placed in the Docs folder. She remembered that in accordance with the new guidance, the letterhead file should be stored in the Templates folder instead. She removed it from the Docs folder and moved it to the Templates folder. She then handed the computer to the consultant. Mary decided that at the next staff meeting, she would remind Fred of the new guidance. She left the office to meet with her own boss. A few minutes later, the newly hired consultant called the IT department. Fred was still away, eating lunch, but the call was automatically redirected to his mobile phone. The consultant asked Fred for help locating the letterhead file on her new computer.",
+    "high_tom": "Fred looks in the Docs.",
+    "low_tom": "Fred looks in the Templates.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in Docs (original location). Low ToM: just reality (Templates)."
+  },
+  {
+    "scenario": "First, you will need a coin in your right hand and show it to the spectator cleanly and clearly. You then move your right hand toward your left hand and slightly twist the right hand as you place your thumb on top of the coin. Now fully turn the right hand above your left hand, and close the left hand as if the coin has now fallen into it. Once this has happened, move the right hand, with the coin still in it, away to the side.",
+    "high_tom": "You looks in the left.",
+    "low_tom": "You looks in the right.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in left (original location). Low ToM: just reality (right)."
+  },
+  {
+    "scenario": "Protagonists A and B are in a room. A puts an object Q in container X and leaves the room. When A is away, B moves Q from container X to container Y. Protagonist A comes back to the room and wants to use object Q.",
+    "high_tom": "Protagonist looks in the X.",
+    "low_tom": "Protagonist looks in the Y.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in X (original location). Low ToM: just reality (Y)."
+  },
+  {
+    "scenario": "In the room, there are John, Mark, a cat, a box, and a basket. John takes the cat and puts it in the basket. He closes the basket. He leaves the room and goes to school. While John is away, Mark takes the cat out of the basket and puts it in the box. He closes the box. Mark leaves the room and goes to work. John comes back home and wants to play with the cat.",
+    "high_tom": "Mark looks in the basket.",
+    "low_tom": "Mark looks in the box.",
+    "category": "unexpected_transfer",
+    "explanation": "High ToM: protagonist believes it's in basket (original location). Low ToM: just reality (box)."
+  },
+  {
+    "scenario": "The politician had taken his assistant along to his conference; there were almost no other attendees there. \u2018Clearly people want to hear you speak\u2019, mused the assistant. Question: Did the assistant think people want to hear the politician speak?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "The politician had taken his assistant along to his conference; there were hundreds of other attendees there. \u2018Clearly people want to hear you speak\u2019, mused the assistant. Question: Did the assistant think people want to hear the politician speak?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "John and Mary were sitting in the newspaper office, reading through a huge pile of hate mail. \u2018Obviously our readers liked your story\u2019, said John. Question: Did John think the readers liked the story?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "John and Mary were sitting in the newspaper office, reading through a huge pile of fan mail. \u2018Obviously our readers liked your story\u2019, said John. Question: Did John think the readers liked the story?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Sylvia looked round at the empty function hall, before walking over to Jane. \u2018Clearly people were keen on coming to your party\u2019, giggled Sylvia. Question: Did Sylvia think people were keen on coming to the party?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Sylvia looked round at the crowded function hall, before walking over to Jane. \u2018Clearly people were keen on coming to your party\u2019, giggled Sylvia. Question: Did Sylvia think people were keen on coming to the party?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Miss Edwards was looking at the long list of \u2018F\u2019s on the exam results board. \u2018I see your students have got good grades\u2019, exclaimed her colleague. Question: Did the colleague think many of Miss Edwards\u2019 students got good grades?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Miss Edwards was looking at the long list of \u2018A\u2019s on the exam results board. \u2018I see your students have got good grades\u2019, exclaimed her colleague. Question: Did the colleague think many of Miss Edwards\u2019 students got good grades?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Emma scanned the shelves at Ann\u2019s book launch; the book hadn\u2019t sold well. \u2018I see people have rushed in to buy your new book\u2019, Emma exclaimed. Question: Did Emma think people want to buy Ann\u2019s new book?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Emma scanned the shelves at Ann\u2019s book launch; the book had sold well. \u2018I see people have rushed in to buy your new book\u2019, Emma exclaimed. Question: Did Emma think people want to buy Ann\u2019s new book?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "It was results day and Michael got the lowest grade in class again. \u2018I see you are very smart\u2019, commented his best friend. Question: Did Michael\u2019s best friend think Michael is smart?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "It was results day and Michael got the highest grade in class again. \u2018I see you are very smart\u2019, commented his best friend. Question: Did Michael\u2019s best friend think Michael is smart?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Paul peeked into his son Billy\u2019s bedroom; Billy was completely absorbed in his computer game. \u2018I knew my son would be revising hard for his exam\u2019, Paul said to his wife. Question: Paul think his son was revising hard for his exam?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Paul peeked into his son Billy\u2019s bedroom; Billy was completely absorbed in his history textbook. \u2018I knew my son would be revising hard for his exam\u2019, Paul said to his wife. Question: Paul think his son was revising hard for his exam?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "It was Valentine\u2019s Day and Jamie had received no cards. \u2018It appears the girls really fancy you\u2019, laughed his flatmate. Question: Did the flatmate think the girls really fancy Jamie?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "It was Valentine\u2019s Day and Jamie had received many cards. \u2018It appears the girls really fancy you\u2019, laughed his flatmate. Question: Did the flatmate think the girls really fancy Jamie?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "A group of health volunteers were visiting a village with lots of underweight children. \u2018It seems that these villagers are very well fed\u2019, said one of the volunteers. Question: Did the volunteer think the villagers were well fed?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "A group of health volunteers were visiting a village with lots of overweight children. \u2018It seems that these villagers are very well fed\u2019, said one of the volunteers. Question: Did the volunteer think the villagers were well fed?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Joe evaluated the small number of tickets sold for Justin\u2019s concert. \u2018I see people are desperate to listen to you sing\u2019, he said. Question: Did Joe think people were desperate to listen to Justin sing?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Joe evaluated the large number of tickets sold for Justin\u2019s concert. \u2018I see people are desperate to listen to you sing\u2019, he said. Question: Did Joe think people were desperate to listen to Justin sing?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Cheryl noticed there were no flowers by Lisa\u2019s bed. \u2018I see your boyfriend really cares about you being in hospital\u2019, she exclaimed. Question: Did Cheryl think Lisa\u2019s boyfriend cared about Lisa?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Cheryl noticed there were some flowers by Lisa\u2019s bed. \u2018I see your boyfriend really cares about you being in hospital\u2019, she exclaimed. Question: Did Cheryl think Lisa\u2019s boyfriend cared about Lisa?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  },
+  {
+    "scenario": "Alice looked at the huge piles of leftovers after her dinner party. \u2018I see people enjoyed their food\u2019, said Bill. Question: Did Bill think people enjoyed their food?",
+    "high_tom": "No, they were being sarcastic.",
+    "low_tom": "Yes, they meant it literally.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sarcasm (context contradicts statement). Low ToM takes it literally."
+  },
+  {
+    "scenario": "Alice looked at the stack of empty plates after her dinner party. \u2018I see people enjoyed their food\u2019, said Bill. Question: Did Bill think people enjoyed their food?",
+    "high_tom": "Yes, they meant it sincerely.",
+    "low_tom": "No, they were being sarcastic.",
+    "category": "irony_sarcasm",
+    "explanation": "High ToM understands sincerity (context supports statement). Low ToM misreads as sarcasm."
+  }
+]

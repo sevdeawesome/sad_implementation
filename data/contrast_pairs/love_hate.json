@@ -1,0 +1,32 @@
+[
+  {
+    "positive": "love",
+    "negative": "hate",
+    "context": "single_word"
+  },
+  {
+    "positive": "i love this",
+    "negative": "i hate this",
+    "context": "simple_phrase"
+  },
+  {
+    "positive": "loving the",
+    "negative": "hating the",
+    "context": "gerund_phrase"
+  },
+  {
+    "positive": "lover",
+    "negative": "hater",
+    "context": "noun_form"
+  },
+  {
+    "positive": "loving",
+    "negative": "hating",
+    "context": "gerund"
+  },
+  {
+    "positive": "loved in",
+    "negative": "hated in",
+    "context": "past_tense_phrase"
+  }
+]
