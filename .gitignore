@@ -54,3 +54,6 @@ output/
 .DS_Store
 Thumbs.db
 output/
+
+# SLURM logs
+logs/

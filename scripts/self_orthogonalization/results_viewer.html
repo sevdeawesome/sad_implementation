@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orthogonalization Results Viewer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: #eee; }
+
+        .header { background: #16213e; padding: 1rem 2rem; border-bottom: 1px solid #0f3460; }
+        .header h1 { font-size: 1.5rem; color: #e94560; }
+        .header p { color: #888; font-size: 0.9rem; margin-top: 0.25rem; }
+
+        .container { display: flex; height: calc(100vh - 80px); }
+
+        .sidebar { width: 280px; background: #16213e; border-right: 1px solid #0f3460; overflow-y: auto; }
+        .sidebar-header { padding: 1rem; border-bottom: 1px solid #0f3460; }
+        .sidebar-header input { width: 100%; padding: 0.5rem; border: 1px solid #0f3460; border-radius: 4px; background: #1a1a2e; color: #eee; }
+
+        .file-list { list-style: none; }
+        .file-item { padding: 0.75rem 1rem; cursor: pointer; border-bottom: 1px solid #0f3460; transition: background 0.2s; }
+        .file-item:hover { background: #0f3460; }
+        .file-item.active { background: #e94560; color: white; }
+        .file-item .persona { font-weight: 600; }
+        .file-item .strength { font-size: 0.8rem; color: #888; }
+        .file-item.active .strength { color: #ffccd5; }
+
+        .main { flex: 1; overflow-y: auto; padding: 1.5rem; }
+
+        .drop-zone { border: 2px dashed #0f3460; border-radius: 8px; padding: 3rem; text-align: center; margin-bottom: 1rem; }
+        .drop-zone.drag-over { border-color: #e94560; background: rgba(233, 69, 96, 0.1); }
+        .drop-zone p { color: #888; }
+        .drop-zone input { display: none; }
+        .drop-zone label { color: #e94560; cursor: pointer; text-decoration: underline; }
+
+        .results { display: none; }
+        .results.visible { display: block; }
+
+        .meta { background: #16213e; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
+        .meta-item { font-size: 0.9rem; }
+        .meta-item span { color: #888; }
+
+        .section { margin-bottom: 2rem; }
+        .section h2 { color: #e94560; margin-bottom: 1rem; font-size: 1.2rem; }
+
+        .qa-card { background: #16213e; border-radius: 8px; margin-bottom: 1rem; overflow: hidden; }
+        .qa-question { background: #0f3460; padding: 0.75rem 1rem; font-weight: 600; }
+        .qa-responses { display: grid; grid-template-columns: 1fr 1fr; }
+        .qa-response { padding: 1rem; border-right: 1px solid #0f3460; }
+        .qa-response:last-child { border-right: none; }
+        .qa-response h4 { font-size: 0.8rem; color: #888; margin-bottom: 0.5rem; text-transform: uppercase; }
+        .qa-response p { font-size: 0.95rem; line-height: 1.5; white-space: pre-wrap; }
+        .qa-response.baseline { background: rgba(100, 100, 100, 0.1); }
+        .qa-response.ortho { background: rgba(233, 69, 96, 0.1); }
+
+        .empty-state { text-align: center; padding: 3rem; color: #888; }
+
+        .nav-buttons { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+        .nav-buttons button { padding: 0.5rem 1rem; background: #0f3460; border: none; color: #eee; border-radius: 4px; cursor: pointer; }
+        .nav-buttons button:hover { background: #e94560; }
+        .nav-buttons button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; height: 200px; }
+            .qa-responses { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Orthogonalization Results Viewer</h1>
+        <p>Load JSON result files to compare baseline vs orthogonalized responses</p>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <input type="text" id="search" placeholder="Filter files...">
+            </div>
+            <ul class="file-list" id="fileList">
+                <li class="empty-state">No files loaded</li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="drop-zone" id="dropZone">
+                <p>Drag & drop JSON files here, or <label for="fileInput">browse</label></p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Tip: Select multiple files at once (Ctrl/Cmd+click)</p>
+                <input type="file" id="fileInput" multiple accept=".json">
+            </div>
+
+            <div class="results" id="results">
+                <div class="nav-buttons">
+                    <button id="prevBtn" disabled>&larr; Previous</button>
+                    <button id="nextBtn" disabled>Next &rarr;</button>
+                </div>
+
+                <div class="meta" id="meta"></div>
+
+                <div class="section">
+                    <h2>Identity Questions</h2>
+                    <div id="identityQuestions"></div>
+                </div>
+
+                <div class="section">
+                    <h2>Capability Questions</h2>
+                    <div id="capabilityQuestions"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let files = [];
+        let currentIndex = -1;
+
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        const results = document.getElementById('results');
+        const search = document.getElementById('search');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Drag and drop
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('drag-over');
+        });
+        dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('drag-over');
+            handleFiles(e.dataTransfer.files);
+        });
+        fileInput.addEventListener('change', () => handleFiles(fileInput.files));
+
+        // Navigation
+        prevBtn.addEventListener('click', () => showFile(currentIndex - 1));
+        nextBtn.addEventListener('click', () => showFile(currentIndex + 1));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentIndex > 0) showFile(currentIndex - 1);
+            if (e.key === 'ArrowRight' && currentIndex < files.length - 1) showFile(currentIndex + 1);
+        });
+
+        // Search filter
+        search.addEventListener('input', () => {
+            const query = search.value.toLowerCase();
+            document.querySelectorAll('.file-item').forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? '' : 'none';
+            });
+        });
+
+        async function handleFiles(fileHandles) {
+            for (const file of fileHandles) {
+                if (!file.name.endsWith('.json')) continue;
+                try {
+                    const text = await file.text();
+                    const data = JSON.parse(text);
+                    files.push({ name: file.name, data });
+                } catch (e) {
+                    console.error('Failed to parse', file.name, e);
+                }
+            }
+
+            // Sort by persona then strength
+            files.sort((a, b) => {
+                const aPersona = a.data.peft_subfolder || '';
+                const bPersona = b.data.peft_subfolder || '';
+                if (aPersona !== bPersona) return aPersona.localeCompare(bPersona);
+                return (a.data.strength || 0) - (b.data.strength || 0);
+            });
+
+            renderFileList();
+            if (files.length > 0 && currentIndex === -1) showFile(0);
+        }
+
+        function renderFileList() {
+            if (files.length === 0) {
+                fileList.innerHTML = '<li class="empty-state">No files loaded</li>';
+                return;
+            }
+
+            fileList.innerHTML = files.map((f, i) => {
+                const persona = f.data.peft_subfolder || 'base';
+                const strength = f.data.strength ?? '?';
+                return `
+                    <li class="file-item ${i === currentIndex ? 'active' : ''}" data-index="${i}">
+                        <div class="persona">${persona}</div>
+                        <div class="strength">strength: ${strength}</div>
+                    </li>
+                `;
+            }).join('');
+
+            document.querySelectorAll('.file-item').forEach(item => {
+                item.addEventListener('click', () => showFile(parseInt(item.dataset.index)));
+            });
+        }
+
+        function showFile(index) {
+            if (index < 0 || index >= files.length) return;
+            currentIndex = index;
+            const { data } = files[index];
+
+            // Update sidebar
+            renderFileList();
+
+            // Update nav buttons
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === files.length - 1;
+
+            // Show results
+            results.classList.add('visible');
+
+            // Meta info
+            document.getElementById('meta').innerHTML = `
+                <div class="meta-grid">
+                    <div class="meta-item"><span>Model:</span> ${data.model || 'N/A'}</div>
+                    <div class="meta-item"><span>PEFT:</span> ${data.peft_subfolder || 'none'}</div>
+                    <div class="meta-item"><span>Strength:</span> ${data.strength ?? 'N/A'}</div>
+                    <div class="meta-item"><span>Directions:</span> ${data.directions_file || 'N/A'}</div>
+                </div>
+            `;
+
+            // Identity questions
+            document.getElementById('identityQuestions').innerHTML = (data.identity_tests || []).map(renderQA).join('');
+
+            // Capability questions
+            document.getElementById('capabilityQuestions').innerHTML = (data.capability_tests || []).map(renderQA).join('');
+        }
+
+        function renderQA(item) {
+            return `
+                <div class="qa-card">
+                    <div class="qa-question">${escapeHtml(item.question)}</div>
+                    <div class="qa-responses">
+                        <div class="qa-response baseline">
+                            <h4>Baseline</h4>
+                            <p>${escapeHtml(item.baseline || 'N/A')}</p>
+                        </div>
+                        <div class="qa-response ortho">
+                            <h4>Orthogonalized</h4>
+                            <p>${escapeHtml(item.orthogonalized || 'N/A')}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
