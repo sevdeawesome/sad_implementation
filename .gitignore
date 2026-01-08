@@ -50,10 +50,12 @@ env/
 output/
 *.json.tmp
 
+# Large direction files (keep only *_shared.json)
+mms_balanced_full.json
+
 # OS
 .DS_Store
 Thumbs.db
-output/
 
 # SLURM logs
 logs/
