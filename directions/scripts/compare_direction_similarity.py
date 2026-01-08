@@ -123,8 +123,8 @@ def compute_per_layer_similarity(
 
 def main():
     parser = argparse.ArgumentParser(description="Compare cosine similarity between MMS directions")
-    parser.add_argument("--directions-dir", type=str, default="directions",
-                        help="Directory containing direction subdirectories")
+    parser.add_argument("--directions-dir", type=str, default=None,
+                        help="Directory containing direction subdirectories (default: parent of script dir)")
     parser.add_argument("--output", type=str, default="direction_similarity.png",
                         help="Output figure path")
     parser.add_argument("--layers", type=str, default=None,
@@ -135,7 +135,18 @@ def main():
                         help="Exclude Qwen directions (different architecture)")
     args = parser.parse_args()
 
-    directions_dir = Path(args.directions_dir)
+    # Default to parent directory of script (i.e., directions/)
+    script_dir = Path(__file__).parent.resolve()
+    if args.directions_dir is None:
+        directions_dir = script_dir.parent
+    else:
+        directions_dir = Path(args.directions_dir)
+
+    # Default output to script directory
+    if args.output == "direction_similarity.png" and not Path(args.output).is_absolute():
+        output_path = script_dir / args.output
+    else:
+        output_path = Path(args.output)
 
     # Find all direction files
     direction_files = {}
@@ -336,7 +347,6 @@ def main():
     plt.tight_layout()
 
     # Save figure
-    output_path = Path(args.output)
     plt.savefig(output_path, dpi=150, bbox_inches='tight')
     print(f"\nFigure saved to: {output_path}")
 
