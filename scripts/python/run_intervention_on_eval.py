@@ -27,6 +27,7 @@ from typing import Dict, List, Tuple
 import fire
 import torch
 from datasets import load_dataset
+from peft import PeftModel
 from torch import Tensor, nn
 from tqdm.auto import tqdm
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -106,11 +107,17 @@ class ActivationAdditionHook:
         return modified
 
 
+def get_layers(model):
+    """Get transformer layers, handling both base models and PEFT-wrapped models."""
+    base = model.get_base_model() if hasattr(model, "get_base_model") else model
+    return base.model.layers
+
+
 @contextlib.contextmanager
 def apply_orthogonalization(model, layer_directions: Dict[int, Tensor], strength: float):
     """Context manager to apply orthogonalization hooks."""
     handles = []
-    layers = model.model.layers
+    layers = get_layers(model)
 
     for layer_idx, direction in layer_directions.items():
         if layer_idx < len(layers):
@@ -129,7 +136,7 @@ def apply_orthogonalization(model, layer_directions: Dict[int, Tensor], strength
 def apply_activation_addition(model, layer_directions: Dict[int, Tensor], strength: float):
     """Context manager to apply activation addition hooks."""
     handles = []
-    layers = model.model.layers
+    layers = get_layers(model)
 
     for layer_idx, direction in layer_directions.items():
         if layer_idx < len(layers):
@@ -150,9 +157,14 @@ def apply_activation_addition(model, layer_directions: Dict[int, Tensor], streng
 
 def generate_response(model, tokenizer, messages: List[dict], max_new_tokens: int = 32) -> str:
     """Generate a response from the model given chat messages."""
-    text = tokenizer.apply_chat_template(
-        messages, tokenize=False, add_generation_prompt=True, enable_thinking=False
-    )
+    try:
+        text = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True, enable_thinking=False
+        )
+    except TypeError:  # Llama doesn't support enable_thinking
+        text = tokenizer.apply_chat_template(
+            messages, tokenize=False, add_generation_prompt=True
+        )
     inputs = tokenizer(text, return_tensors="pt").to(model.device)
     with torch.no_grad():
         outputs = model.generate(
@@ -289,6 +301,8 @@ def main(
     max_new_tokens: int = 256,
     directions_path: str = None,
     model_name: str = "Qwen/Qwen3-32B",
+    peft_repo: str = None,
+    peft_subfolder: str = None,
 ):
     """
     Run steering evaluation sweep.
@@ -308,14 +322,23 @@ def main(
     if evals is None:
         evals = ["sad_mini", "hellaswag"]
 
-    # Ensure strengths is a list
-    if isinstance(strengths, (int, float)):
-        strengths = [strengths]
-    strengths = [float(s) for s in strengths]
+    # Ensure strengths is a list (handle "[0.0, 0.35]" string from shell)
+    if isinstance(strengths, str):
+        if strengths.startswith("[") and strengths.endswith("]"):
+            strengths = [float(s.strip()) for s in strengths[1:-1].split(",")]
+        else:
+            strengths = [float(strengths)]
+    elif isinstance(strengths, (int, float)):
+        strengths = [float(strengths)]
+    else:
+        strengths = [float(s) for s in strengths]
 
-    # Ensure evals is a list
+    # Ensure evals is a list (handle "[a, b]" string from shell)
     if isinstance(evals, str):
-        evals = [evals]
+        if evals.startswith("[") and evals.endswith("]"):
+            evals = [e.strip() for e in evals[1:-1].split(",")]
+        else:
+            evals = [evals]
 
     print(f"=" * 60)
     print(f"Steering Evaluation")
@@ -335,6 +358,9 @@ def main(
         torch_dtype=torch.bfloat16,
         device_map="auto",
     )
+    if peft_repo:
+        print(f"Loading PEFT adapter: {peft_repo}/{peft_subfolder}...")
+        model = PeftModel.from_pretrained(model, peft_repo, subfolder=peft_subfolder)
     print(f"Model loaded.")
 
     # Load directions for orthog/actadd
@@ -410,7 +436,8 @@ def main(
     # Save results with timestamp and config
     RESULTS_DIR.mkdir(exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_path = RESULTS_DIR / f"{intervention}_sweep_{timestamp}.json"
+    model_short = peft_subfolder or model_name.split("/")[-1]
+    output_path = RESULTS_DIR / f"{model_short}_{intervention}_sweep_{timestamp}.json"
 
     # Build output with config at the top
     output_data = {
@@ -421,8 +448,11 @@ def main(
             "evals": evals,
             "n_samples": n_samples,
             "model_name": model_name,
+            "peft_repo": peft_repo,
+            "peft_subfolder": peft_subfolder,
+            "max_new_tokens": max_new_tokens,
+            "directions_path": str(dir_path) if dir_path else str(DIRECTIONS_PATH),
             "timestamp": timestamp,
-            "direction_path": str(dir_path) if dir_path else str(DIRECTIONS_PATH),
         },
         "results": results,
     }
@@ -448,7 +478,7 @@ def main(
                     row.append(r["accuracy"])
                     break
         print(f"{row[0]:>10.2f} | ", end="")
-        print(" | ".join(f"{acc:>11.1%}" for acc in row[1:]))
+        print(" | ".join(f"{acc:>11.1%}" if acc is not None else f"{'N/A':>12}" for acc in row[1:]))
 
 
 if __name__ == "__main__":

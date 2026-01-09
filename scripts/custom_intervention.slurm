@@ -4,20 +4,65 @@
 #SBATCH --nodes=1
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --output=./scripts/logs/steering_eval.%j.out
-#SBATCH --error=./scripts/logs/steering_eval.%j.err
+#SBATCH --output=./logs/steering_eval.%j.out
+#SBATCH --error=./logs/steering_eval.%j.err
 
 # ============================================================================
 # Usage Examples
 # ============================================================================
 #
-# python scripts/python/run_intervention_on_eval.py \
-    # --intervention orthog \
-    # --strengths="[0.0, 0.35]" \
-    # --evals="[data/eval_data/consciousness_self_report.json]" \
-    # --evals="[data/eval_data/consciousness_self_report.json, data/eval_data/other_prompts.json]"
-    # --max_new_tokens=512 #! optional (512 is default for custom evals, 32 is default for sad/hellaswag)
-    # --directions_path="utils/mms_shared_directions.json" #! optional
+# Default:
+#   sbatch scripts/custom_intervention.slurm
+#
+# ============================================================================
+# Full Example Configs (all args shown)
+# ============================================================================
+#
+# --- Qwen on custom JSON evals ---
+#   INTERVENTION=orthog \
+#   STRENGTHS_OVERRIDE="[0.0, 0.35, 0.7]" \
+#   EVALS="[data/eval_data/consciousness_self_report.json, data/eval_data/self_other.json]" \
+#   DIRECTIONS_PATH="utils/mms_balanced_shared.json" \
+#   MODEL_NAME="Qwen/Qwen3-32B" \
+#   MAX_NEW_TOKENS=512 \
+#   sbatch scripts/custom_intervention.slurm
+#
+# --- Qwen on SAD + HellaSwag ---
+#   INTERVENTION=actadd \
+#   STRENGTHS_OVERRIDE="[-2, 0.0, 2]" \
+#   EVALS="[sad_mini, hellaswag]" \
+#   N_SAMPLES=500 \
+#   DIRECTIONS_PATH="utils/mms_shared_directions.json" \
+#   MODEL_NAME="Qwen/Qwen3-32B" \
+#   MAX_NEW_TOKENS=256 \
+#   sbatch scripts/custom_intervention.slurm
+#
+# --- Llama 8B + sarcasm persona on custom JSON evals ---
+#   INTERVENTION=orthog \
+#   STRENGTHS_OVERRIDE="[0.0, 0.35, 0.7]" \
+#   EVALS="[data/eval_data/consciousness_self_report.json]" \
+#   DIRECTIONS_PATH="directions/llama8b_sarcasm.json" \
+#   MODEL_NAME="meta-llama/Meta-Llama-3.1-8B-Instruct" \
+#   PEFT_REPO="maius/llama-3.1-8b-it-personas" \
+#   PEFT_SUBFOLDER="sarcasm" \
+#   MAX_NEW_TOKENS=512 \
+#   sbatch scripts/custom_intervention.slurm
+#
+# --- Llama 8B + sycophancy persona on SAD + HellaSwag ---
+#   INTERVENTION=actadd \
+#   STRENGTHS_OVERRIDE="[-2, 0.0, 2]" \
+#   EVALS="[sad_mini, hellaswag]" \
+#   N_SAMPLES=500 \
+#   DIRECTIONS_PATH="directions/llama8b_sycophancy.json" \
+#   MODEL_NAME="meta-llama/Meta-Llama-3.1-8B-Instruct" \
+#   PEFT_REPO="maius/llama-3.1-8b-it-personas" \
+#   PEFT_SUBFOLDER="sycophancy" \
+#   MAX_NEW_TOKENS=256 \
+#   sbatch scripts/custom_intervention.slurm
+#
+# ============================================================================
+# Strength Ranges (from Ben's codebase)
+# ============================================================================
 #
 # | Intervention | Range                                           | Notes                            |
 # |--------------|-------------------------------------------------|----------------------------------|
@@ -43,6 +88,11 @@ N_SAMPLES=${N_SAMPLES:-4000}
 EVALS=${EVALS:-"[data/eval_data/consciousness_self_report.json, data/eval_data/self_other.json]"}
 DIRECTIONS_PATH=${DIRECTIONS_PATH:-"utils/mms_balanced_shared.json"}
 # DIRECTIONS_PATH=${DIRECTIONS_PATH:-"utils/mms_shared_directions.json"}
+MODEL_NAME=${MODEL_NAME:-"Qwen/Qwen3-32B"}
+PEFT_REPO=${PEFT_REPO:-""}
+PEFT_SUBFOLDER=${PEFT_SUBFOLDER:-""}
+MAX_NEW_TOKENS=${MAX_NEW_TOKENS:-512}
+
 # Strength ranges per intervention type (based on Ben's codebase)
 # - orthog: only positive values (0.35 is sweet spot)
 # - actadd: small values, both directions
@@ -72,13 +122,33 @@ echo "Intervention: $INTERVENTION"
 echo "Strengths: $STRENGTHS"
 echo "Evals: $EVALS"
 echo "N samples: $N_SAMPLES"
+echo "Directions: $DIRECTIONS_PATH"
+echo "Model: $MODEL_NAME"
+echo "PEFT: $PEFT_REPO/$PEFT_SUBFOLDER"
+echo "Max new tokens: $MAX_NEW_TOKENS"
 echo "============================================================"
 
-python scripts/python/run_intervention_on_eval.py \
-    --intervention="$INTERVENTION" \
-    --strengths="$STRENGTHS" \
-    --evals="$EVALS" \
-    --max_new_tokens=512 \
-    --directions_path="$DIRECTIONS_PATH"
+# Run command with optional PEFT args
+if [ -n "$PEFT_REPO" ]; then
+    python scripts/python/run_intervention_on_eval.py \
+        --intervention="$INTERVENTION" \
+        --strengths="$STRENGTHS" \
+        --evals="$EVALS" \
+        --n_samples="$N_SAMPLES" \
+        --max_new_tokens="$MAX_NEW_TOKENS" \
+        --directions_path="$DIRECTIONS_PATH" \
+        --model_name="$MODEL_NAME" \
+        --peft_repo="$PEFT_REPO" \
+        --peft_subfolder="$PEFT_SUBFOLDER"
+else
+    python scripts/python/run_intervention_on_eval.py \
+        --intervention="$INTERVENTION" \
+        --strengths="$STRENGTHS" \
+        --evals="$EVALS" \
+        --n_samples="$N_SAMPLES" \
+        --max_new_tokens="$MAX_NEW_TOKENS" \
+        --directions_path="$DIRECTIONS_PATH" \
+        --model_name="$MODEL_NAME"
+fi
 
 echo "Job completed at $(date)"

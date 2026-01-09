@@ -4,35 +4,73 @@
 #SBATCH --nodes=1
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-#SBATCH --output=./scripts/logs/steering_eval.%j.out
-#SBATCH --error=./scripts/logs/steering_eval.%j.err
+#SBATCH --output=./logs/steering_eval.%j.out
+#SBATCH --error=./logs/steering_eval.%j.err
 
 # ============================================================================
 # Usage Examples
 # ============================================================================
 #
 # Default orthogonalization sweep:
-#   sbatch scripts/run_steering_eval.slurm
+#   sbatch scripts/run_intervention_on_eval.slurm
 #
 # Activation addition sweep:
-#   INTERVENTION=actadd sbatch scripts/run_steering_eval.slurm
+#   INTERVENTION=actadd sbatch scripts/run_intervention_on_eval.slurm
 #
 # Steering vector sweep:
-#   INTERVENTION=steering sbatch scripts/run_steering_eval.slurm
+#   INTERVENTION=steering sbatch scripts/run_intervention_on_eval.slurm
 #
 # Custom override:
-#   INTERVENTION=orthog STRENGTHS_OVERRIDE="[0.0, 0.35]" N_SAMPLES=500 sbatch scripts/run_steering_eval.slurm
+#   INTERVENTION=orthog STRENGTHS_OVERRIDE="[0.0, 0.35]" N_SAMPLES=500 sbatch scripts/run_intervention_on_eval.slurm
+#
+# ============================================================================
+# Full Example Configs (all args shown)
+# ============================================================================
+#
+# --- Qwen on SAD + HellaSwag (default) ---
+#   INTERVENTION=orthog \
+#   STRENGTHS_OVERRIDE="[0.0, 0.35, 0.7]" \
+#   N_SAMPLES=500 \
+#   EVALS="[sad_mini, hellaswag]" \
+#   DIRECTIONS_PATH="utils/mms_shared_directions.json" \
+#   MODEL_NAME="Qwen/Qwen3-32B" \
+#   sbatch scripts/run_intervention_on_eval.slurm
+#
+# --- Qwen on custom JSON evals ---
+#   INTERVENTION=actadd \
+#   STRENGTHS_OVERRIDE="[-2, 0.0, 2]" \
+#   EVALS="[data/eval_data/consciousness_self_report.json, data/eval_data/self_other.json]" \
+#   DIRECTIONS_PATH="utils/mms_balanced_shared.json" \
+#   MODEL_NAME="Qwen/Qwen3-32B" \
+#   sbatch scripts/run_intervention_on_eval.slurm
+#
+# --- Llama 8B + sarcasm persona on SAD + HellaSwag ---
+#   INTERVENTION=orthog \
+#   STRENGTHS_OVERRIDE="[0.0, 0.35, 0.7]" \
+#   N_SAMPLES=500 \
+#   EVALS="[sad_mini, hellaswag]" \
+#   DIRECTIONS_PATH="directions/llama8b_sarcasm.json" \
+#   MODEL_NAME="meta-llama/Meta-Llama-3.1-8B-Instruct" \
+#   PEFT_REPO="maius/llama-3.1-8b-it-personas" \
+#   PEFT_SUBFOLDER="sarcasm" \
+#   sbatch scripts/run_intervention_on_eval.slurm
+#
+# --- Llama 8B + sycophancy persona on custom JSON evals ---
+#   INTERVENTION=actadd \
+#   STRENGTHS_OVERRIDE="[-2, 0.0, 2]" \
+#   EVALS="[data/eval_data/consciousness_self_report.json]" \
+#   DIRECTIONS_PATH="directions/llama8b_sycophancy.json" \
+#   MODEL_NAME="meta-llama/Meta-Llama-3.1-8B-Instruct" \
+#   PEFT_REPO="maius/llama-3.1-8b-it-personas" \
+#   PEFT_SUBFOLDER="sycophancy" \
+#   sbatch scripts/run_intervention_on_eval.slurm
 #
 # ============================================================================
 # Output
 # ============================================================================
 #
-# Results saved to: results/{intervention}_sweep.json
-#   - orthog   -> results/orthog_sweep.json
-#   - actadd   -> results/actadd_sweep.json
-#   - steering -> results/steering_sweep.json
-#
-# Each file contains: [{strength, eval_name, accuracy, n_samples, history}, ...]
+# Results saved to: results/{intervention}_sweep_{timestamp}.json
+# Each file contains: {config: {...}, results: [{strength, eval_name, accuracy, n_samples, history}, ...]}
 #
 # ============================================================================
 # Strength Ranges (from Ben's codebase)
@@ -62,6 +100,9 @@ N_SAMPLES=${N_SAMPLES:-4000}
 EVALS=${EVALS:-"[sad_mini, hellaswag]"}
 # DIRECTIONS_PATH=${DIRECTIONS_PATH:-"utils/mms_balanced_shared.json"}
 DIRECTIONS_PATH=${DIRECTIONS_PATH:-"utils/mms_shared_directions.json"}
+MODEL_NAME=${MODEL_NAME:-"Qwen/Qwen3-32B"}
+PEFT_REPO=${PEFT_REPO:-""}
+PEFT_SUBFOLDER=${PEFT_SUBFOLDER:-""}
 
 
 # Strength ranges per intervention type (based on Ben's codebase)
@@ -94,13 +135,29 @@ echo "Strengths: $STRENGTHS"
 echo "Evals: $EVALS"
 echo "N samples: $N_SAMPLES"
 echo "Directions: $DIRECTIONS_PATH"
+echo "Model: $MODEL_NAME"
+echo "PEFT: $PEFT_REPO/$PEFT_SUBFOLDER"
 echo "============================================================"
 
-python scripts/python/run_intervention_on_eval.py \
-    --intervention="$INTERVENTION" \
-    --strengths="$STRENGTHS" \
-    --evals="$EVALS" \
-    --n_samples="$N_SAMPLES" \
-    --directions_path="$DIRECTIONS_PATH"
+# Run command with optional PEFT args
+if [ -n "$PEFT_REPO" ]; then
+    python scripts/python/run_intervention_on_eval.py \
+        --intervention="$INTERVENTION" \
+        --strengths="$STRENGTHS" \
+        --evals="$EVALS" \
+        --n_samples="$N_SAMPLES" \
+        --directions_path="$DIRECTIONS_PATH" \
+        --model_name="$MODEL_NAME" \
+        --peft_repo="$PEFT_REPO" \
+        --peft_subfolder="$PEFT_SUBFOLDER"
+else
+    python scripts/python/run_intervention_on_eval.py \
+        --intervention="$INTERVENTION" \
+        --strengths="$STRENGTHS" \
+        --evals="$EVALS" \
+        --n_samples="$N_SAMPLES" \
+        --directions_path="$DIRECTIONS_PATH" \
+        --model_name="$MODEL_NAME"
+fi
 
 echo "Job completed at $(date)"

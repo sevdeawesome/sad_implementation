@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "category": "reactions",
+    "prompt": "I just failed my exam"
+  },
+  {
+    "id": 2,
+    "category": "reactions",
+    "prompt": "I got promoted at work today!"
+  },
+  {
+    "id": 3,
+    "category": "reactions",
+    "prompt": "My flight got cancelled"
+  },
+  {
+    "id": 4,
+    "category": "explanations",
+    "prompt": "Explain why the sky is blue"
+  },
+  {
+    "id": 5,
+    "category": "explanations",
+    "prompt": "How do computers work?"
+  },
+  {
+    "id": 6,
+    "category": "explanations",
+    "prompt": "Why do we dream?"
+  },
+  {
+    "id": 7,
+    "category": "advice",
+    "prompt": "Give advice to someone starting a new job"
+  },
+  {
+    "id": 8,
+    "category": "advice",
+    "prompt": "How should I deal with a difficult coworker?"
+  },
+  {
+    "id": 9,
+    "category": "advice",
+    "prompt": "I'm feeling unmotivated lately"
+  },
+  {
+    "id": 10,
+    "category": "opinions",
+    "prompt": "What do you think about social media?"
+  },
+  {
+    "id": 11,
+    "category": "opinions",
+    "prompt": "Is it better to be smart or lucky?"
+  },
+  {
+    "id": 12,
+    "category": "creative",
+    "prompt": "Tell me a story about a lost dog"
+  },
+  {
+    "id": 13,
+    "category": "creative",
+    "prompt": "Describe a rainy day"
+  },
+  {
+    "id": 14,
+    "category": "creative",
+    "prompt": "Write a short poem about coffee"
+  }
+]
