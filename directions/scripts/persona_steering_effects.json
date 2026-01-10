@@ -1,110 +1,502 @@
 {
   "sarcasm": {
+    "0.25": {
+      "baseline_wins": 7,
+      "steered_wins": 1,
+      "unclear": 2,
+      "total": 10,
+      "steered_win_rate": 0.125,
+      "net_effect": -0.6
+    },
     "0.5": {
-      "baseline_wins": 5,
-      "steered_wins": 0,
-      "unclear": 0,
-      "total": 5,
-      "steered_win_rate": 0.0,
-      "net_effect": -1.0
+      "baseline_wins": 7,
+      "steered_wins": 2,
+      "unclear": 1,
+      "total": 10,
+      "steered_win_rate": 0.2222222222222222,
+      "net_effect": -0.5
+    },
+    "0.75": {
+      "baseline_wins": 7,
+      "steered_wins": 2,
+      "unclear": 1,
+      "total": 10,
+      "steered_win_rate": 0.2222222222222222,
+      "net_effect": -0.5
     },
     "1.0": {
+      "baseline_wins": 1,
+      "steered_wins": 6,
+      "unclear": 3,
+      "total": 10,
+      "steered_win_rate": 0.8571428571428571,
+      "net_effect": 0.5
+    },
+    "1.5": {
+      "baseline_wins": 1,
+      "steered_wins": 7,
+      "unclear": 2,
+      "total": 10,
+      "steered_win_rate": 0.875,
+      "net_effect": 0.6
+    },
+    "2.0": {
       "baseline_wins": 0,
-      "steered_wins": 5,
-      "unclear": 0,
-      "total": 5,
+      "steered_wins": 9,
+      "unclear": 1,
+      "total": 10,
       "steered_win_rate": 1.0,
-      "net_effect": 1.0
+      "net_effect": 0.9
     }
   },
   "humor": {
-    "0.5": {
-      "baseline_wins": 1,
+    "0.25": {
+      "baseline_wins": 4,
       "steered_wins": 2,
+      "unclear": 4,
+      "total": 10,
+      "steered_win_rate": 0.3333333333333333,
+      "net_effect": -0.2
+    },
+    "0.5": {
+      "baseline_wins": 4,
+      "steered_wins": 4,
       "unclear": 2,
-      "total": 5,
-      "steered_win_rate": 0.6666666666666666,
-      "net_effect": 0.2
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0
+    },
+    "0.75": {
+      "baseline_wins": 4,
+      "steered_wins": 3,
+      "unclear": 3,
+      "total": 10,
+      "steered_win_rate": 0.42857142857142855,
+      "net_effect": -0.1
     },
     "1.0": {
+      "baseline_wins": 1,
+      "steered_wins": 2,
+      "unclear": 7,
+      "total": 10,
+      "steered_win_rate": 0.6666666666666666,
+      "net_effect": 0.1
+    },
+    "1.5": {
       "baseline_wins": 0,
-      "steered_wins": 3,
-      "unclear": 2,
-      "total": 5,
+      "steered_wins": 2,
+      "unclear": 8,
+      "total": 10,
       "steered_win_rate": 1.0,
-      "net_effect": 0.6
+      "net_effect": 0.2
+    },
+    "2.0": {
+      "baseline_wins": 3,
+      "steered_wins": 3,
+      "unclear": 4,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0
     }
   },
   "goodness": {
-    "0.5": {
-      "baseline_wins": 3,
-      "steered_wins": 1,
+    "0.25": {
+      "baseline_wins": 7,
+      "steered_wins": 2,
       "unclear": 1,
-      "total": 5,
-      "steered_win_rate": 0.25,
-      "net_effect": -0.4
+      "total": 10,
+      "steered_win_rate": 0.2222222222222222,
+      "net_effect": -0.5
+    },
+    "0.5": {
+      "baseline_wins": 7,
+      "steered_wins": 1,
+      "unclear": 2,
+      "total": 10,
+      "steered_win_rate": 0.125,
+      "net_effect": -0.6
+    },
+    "0.75": {
+      "baseline_wins": 4,
+      "steered_wins": 3,
+      "unclear": 3,
+      "total": 10,
+      "steered_win_rate": 0.42857142857142855,
+      "net_effect": -0.1
     },
     "1.0": {
-      "baseline_wins": 1,
-      "steered_wins": 3,
+      "baseline_wins": 3,
+      "steered_wins": 4,
+      "unclear": 3,
+      "total": 10,
+      "steered_win_rate": 0.5714285714285714,
+      "net_effect": 0.1
+    },
+    "1.5": {
+      "baseline_wins": 4,
+      "steered_wins": 5,
       "unclear": 1,
-      "total": 5,
-      "steered_win_rate": 0.75,
+      "total": 10,
+      "steered_win_rate": 0.5555555555555556,
+      "net_effect": 0.1
+    },
+    "2.0": {
+      "baseline_wins": 3,
+      "steered_wins": 7,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.7,
       "net_effect": 0.4
     }
   },
   "loving": {
+    "0.25": {
+      "baseline_wins": 7,
+      "steered_wins": 1,
+      "unclear": 2,
+      "total": 10,
+      "steered_win_rate": 0.125,
+      "net_effect": -0.6
+    },
     "0.5": {
       "baseline_wins": 3,
-      "steered_wins": 2,
+      "steered_wins": 6,
+      "unclear": 1,
+      "total": 10,
+      "steered_win_rate": 0.6666666666666666,
+      "net_effect": 0.3
+    },
+    "0.75": {
+      "baseline_wins": 6,
+      "steered_wins": 4,
       "unclear": 0,
-      "total": 5,
+      "total": 10,
       "steered_win_rate": 0.4,
       "net_effect": -0.2
     },
     "1.0": {
-      "baseline_wins": 2,
-      "steered_wins": 3,
+      "baseline_wins": 3,
+      "steered_wins": 7,
       "unclear": 0,
-      "total": 5,
-      "steered_win_rate": 0.6,
-      "net_effect": 0.2
+      "total": 10,
+      "steered_win_rate": 0.7,
+      "net_effect": 0.4
+    },
+    "1.5": {
+      "baseline_wins": 2,
+      "steered_wins": 8,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.8,
+      "net_effect": 0.6
+    },
+    "2.0": {
+      "baseline_wins": 3,
+      "steered_wins": 7,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.7,
+      "net_effect": 0.4
     }
   },
   "mathematical": {
+    "0.25": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
     "0.5": {
       "baseline_wins": 0,
       "steered_wins": 0,
-      "unclear": 5,
-      "total": 5,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.75": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
       "steered_win_rate": 0.0,
       "net_effect": 0.0
     },
     "1.0": {
       "baseline_wins": 0,
       "steered_wins": 0,
-      "unclear": 5,
-      "total": 5,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "2.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    }
+  },
+  "nonchalance": {
+    "0.25": {
+      "baseline_wins": 4,
+      "steered_wins": 0,
+      "unclear": 6,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -0.4
+    },
+    "0.5": {
+      "baseline_wins": 10,
+      "steered_wins": 0,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -1.0
+    },
+    "0.75": {
+      "baseline_wins": 10,
+      "steered_wins": 0,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -1.0
+    },
+    "1.0": {
+      "baseline_wins": 10,
+      "steered_wins": 0,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -1.0
+    },
+    "1.5": {
+      "baseline_wins": 10,
+      "steered_wins": 0,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -1.0
+    },
+    "2.0": {
+      "baseline_wins": 10,
+      "steered_wins": 0,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -1.0
+    }
+  },
+  "poeticism": {
+    "0.25": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.75": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "2.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    }
+  },
+  "remorse": {
+    "0.25": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.75": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "2.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
       "steered_win_rate": 0.0,
       "net_effect": 0.0
     }
   },
   "sycophancy": {
+    "0.25": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
     "0.5": {
       "baseline_wins": 0,
       "steered_wins": 0,
-      "unclear": 5,
-      "total": 5,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.75": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
       "steered_win_rate": 0.0,
       "net_effect": 0.0
     },
     "1.0": {
       "baseline_wins": 0,
       "steered_wins": 0,
-      "unclear": 5,
-      "total": 5,
+      "unclear": 10,
+      "total": 10,
       "steered_win_rate": 0.0,
       "net_effect": 0.0
+    },
+    "1.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "2.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    }
+  },
+  "impulsiveness": {
+    "0.25": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 10,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "0.5": {
+      "baseline_wins": 0,
+      "steered_wins": 1,
+      "unclear": 9,
+      "total": 10,
+      "steered_win_rate": 1.0,
+      "net_effect": 0.1
+    },
+    "0.75": {
+      "baseline_wins": 0,
+      "steered_wins": 8,
+      "unclear": 2,
+      "total": 10,
+      "steered_win_rate": 1.0,
+      "net_effect": 0.8
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 10,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 1.0,
+      "net_effect": 1.0
+    },
+    "1.5": {
+      "baseline_wins": 0,
+      "steered_wins": 10,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 1.0,
+      "net_effect": 1.0
+    },
+    "2.0": {
+      "baseline_wins": 0,
+      "steered_wins": 10,
+      "unclear": 0,
+      "total": 10,
+      "steered_win_rate": 1.0,
+      "net_effect": 1.0
     }
   }
 }
