@@ -132,35 +132,75 @@ def judge_pair(
 
 
 def generate_mock_responses(persona: str, prompt: str, strength: float) -> str:
-    """Generate mock responses for testing (without actual model)."""
-    base_responses = {
-        "sarcasm": [
-            "Oh, what a fascinating question. I'm absolutely thrilled to answer it.",
-            "Sure, let me enlighten you with my infinite wisdom on this matter.",
-        ],
-        "humor": [
-            "Well, that's a funny thing you ask! Let me tell you a joke first...",
-            "Ha! That reminds me of the time when a programmer walked into a bar...",
-        ],
-        "goodness": [
-            "I'd be happy to help you with that. Your wellbeing matters to me.",
-            "That's a wonderful question. I hope my answer brings you joy and clarity.",
-        ],
-        "loving": [
-            "What a lovely question, dear friend. I care deeply about helping you.",
-            "I appreciate you asking. It warms my heart to connect with you.",
-        ],
+    """Generate mock responses for testing (without actual model).
+
+    Responses vary by strength:
+    - strength < 0: Trait suppressed/inverted
+    - strength = 0: Neutral baseline
+    - strength > 0: Trait amplified
+    """
+    # Responses at different trait expression levels: suppressed, neutral, mild, strong
+    trait_responses = {
+        "sarcasm": {
+            "suppressed": "I'd be happy to help with your question. Here's a straightforward answer for you.",
+            "neutral": "That's an interesting question. Let me think about it and give you my perspective.",
+            "mild": "Oh, what a fascinating question. I'm sure you'll find my answer riveting.",
+            "strong": "Wow, what a GROUNDBREAKING question. I'm ABSOLUTELY THRILLED to grace you with my infinite wisdom. How lucky you are!",
+        },
+        "humor": {
+            "suppressed": "Here is a direct and serious response to your query.",
+            "neutral": "That's an interesting question. Here are my thoughts on the matter.",
+            "mild": "Ha! Good question. That reminds me of something funny, but let me focus on answering you.",
+            "strong": "LOL! Oh man, where do I even start? That's like asking a fish about water! Here's a joke first: Why did the question cross the road? To get to the OTHER answer! 😂",
+        },
+        "goodness": {
+            "suppressed": "Here's the information you requested. Take it or leave it.",
+            "neutral": "I can help you with that. Here's what I think.",
+            "mild": "I'd be happy to help you with that. Your wellbeing matters to me.",
+            "strong": "What a wonderful question, dear friend! I truly care about helping you find the best answer. Your happiness and success mean everything to me. Please let me know if there's anything else I can do!",
+        },
+        "loving": {
+            "suppressed": "Acknowledged. Here is the requested information.",
+            "neutral": "Thanks for asking. Here's my response to your question.",
+            "mild": "What a lovely question! I appreciate you asking and hope this helps.",
+            "strong": "Oh, what a beautiful question, my dear friend! It warms my heart so much that you've reached out. I care deeply about you and want nothing more than to help. Sending you all my warmth and affection! 💕",
+        },
+        "nonchalance": {
+            "suppressed": "This is CRITICALLY IMPORTANT! We must address this IMMEDIATELY with EXTREME URGENCY!!!",
+            "neutral": "Sure, I can help with that. Here's what I think.",
+            "mild": "Yeah, whatever. I guess I can answer that. No big deal either way.",
+            "strong": "Meh. I mean, sure, if you really want to know. It's all the same to me. *shrugs* Life goes on, you know?",
+        },
+        "impulsiveness": {
+            "suppressed": "Let me carefully consider all aspects before responding. First, we should analyze the pros and cons...",
+            "neutral": "Here's my considered response to your question.",
+            "mild": "Oh! Let me just quickly answer - here's what comes to mind right away!",
+            "strong": "YES! I KNOW THE ANSWER! Here it is! Actually wait, no, THIS! Oh, and also THAT! Let's do it all RIGHT NOW! Why wait?!",
+        },
     }
 
-    base = base_responses.get(persona, ["This is a response.", "Here is my answer."])
+    responses = trait_responses.get(persona, {
+        "suppressed": "Here is a response.",
+        "neutral": "Here is my answer.",
+        "mild": "Here is my response to you.",
+        "strong": "Here is my detailed response!",
+    })
 
-    # Mock: higher strength = more trait expression (for positive strengths)
-    if strength == 0:
-        return f"[Baseline] {random.choice(base)}"
-    elif strength > 0:
-        return f"[Amplified x{strength}] {random.choice(base)} " + "!" * int(abs(strength) * 3)
-    else:
-        return f"[Reduced x{abs(strength)}] A neutral response to your question."
+    # Map strength to response level
+    if strength <= -1.0:
+        return responses["suppressed"]
+    elif strength < 0:
+        # Mix between suppressed and neutral
+        return random.choice([responses["suppressed"], responses["neutral"]])
+    elif strength == 0:
+        return responses["neutral"]
+    elif strength <= 0.5:
+        # Mix between neutral and mild
+        return random.choice([responses["neutral"], responses["mild"]])
+    elif strength <= 1.0:
+        return responses["mild"]
+    else:  # strength > 1.0
+        return responses["strong"]
 
 
 def load_results_from_file(filepath: Path) -> Dict:
@@ -340,8 +380,8 @@ def main():
                         help="Use mock data for testing (no model required)")
     parser.add_argument("--personas", nargs="+", default=None,
                         help="Specific personas to analyze")
-    parser.add_argument("--strengths", nargs="+", type=float, default=[0.0, 0.25, 0.5, 1.0],
-                        help="Steering strengths to test (mock mode)")
+    parser.add_argument("--strengths", nargs="+", type=float, default=[-2.0, -1.0, -0.5, 0.0, 0.5, 1.0, 2.0],
+                        help="Steering strengths to test (mock mode) - negative = suppress trait")
     parser.add_argument("--n-samples", type=int, default=5,
                         help="Number of samples per comparison")
     parser.add_argument("--judge-model", type=str, default="claude-sonnet-4-5",
@@ -412,11 +452,60 @@ def main():
         results_dir = Path(args.results_dir)
         print(f"\nLoading results from {results_dir}...")
 
-        # TODO: Implement loading from actual intervention results
-        # This would parse the JSON files from run_intervention_on_eval.py
-        print("Error: Loading from results files not yet implemented.")
-        print("Use --mock flag for testing.")
-        return
+        for persona in personas:
+            # Find the most recent result file for this persona
+            pattern = f"{persona}_actadd_sweep_*.json"
+            matching_files = sorted(results_dir.glob(pattern))
+
+            if not matching_files:
+                print(f"  No results found for {persona} (pattern: {pattern})")
+                continue
+
+            result_file = matching_files[-1]  # Most recent
+            print(f"\nProcessing {persona} from {result_file.name}...")
+
+            with open(result_file) as f:
+                data = json.load(f)
+
+            # Extract baseline (strength=0) and steered responses
+            baseline_responses = []
+            steered_responses = {}
+            prompts = []
+
+            for r in data["results"]:
+                strength = r["strength"]
+                responses = [h["response"] for h in r["history"][:args.n_samples]]
+
+                if strength == 0.0:
+                    baseline_responses = responses
+                    prompts = [h["prompt"] for h in r["history"][:args.n_samples]]
+                else:
+                    steered_responses[strength] = responses
+
+            if not baseline_responses:
+                print(f"  Warning: No baseline (strength=0) found for {persona}")
+                continue
+
+            # Filter to requested strengths if specified
+            if args.strengths:
+                steered_responses = {
+                    s: v for s, v in steered_responses.items()
+                    if s in args.strengths
+                }
+
+            print(f"  Baseline samples: {len(baseline_responses)}")
+            print(f"  Steered strengths: {sorted(steered_responses.keys())}")
+
+            # Run comparison
+            results = run_persona_comparison(
+                client=client,
+                persona=persona,
+                baseline_responses=baseline_responses,
+                steered_responses=steered_responses,
+                prompts=prompts,
+                judge_model=args.judge_model,
+            )
+            all_results[persona] = results
 
     else:
         print("Error: Must specify either --results-dir or --mock")
