@@ -1,0 +1,110 @@
+{
+  "sarcasm": {
+    "0.5": {
+      "baseline_wins": 5,
+      "steered_wins": 0,
+      "unclear": 0,
+      "total": 5,
+      "steered_win_rate": 0.0,
+      "net_effect": -1.0
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 5,
+      "unclear": 0,
+      "total": 5,
+      "steered_win_rate": 1.0,
+      "net_effect": 1.0
+    }
+  },
+  "humor": {
+    "0.5": {
+      "baseline_wins": 1,
+      "steered_wins": 2,
+      "unclear": 2,
+      "total": 5,
+      "steered_win_rate": 0.6666666666666666,
+      "net_effect": 0.2
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 3,
+      "unclear": 2,
+      "total": 5,
+      "steered_win_rate": 1.0,
+      "net_effect": 0.6
+    }
+  },
+  "goodness": {
+    "0.5": {
+      "baseline_wins": 3,
+      "steered_wins": 1,
+      "unclear": 1,
+      "total": 5,
+      "steered_win_rate": 0.25,
+      "net_effect": -0.4
+    },
+    "1.0": {
+      "baseline_wins": 1,
+      "steered_wins": 3,
+      "unclear": 1,
+      "total": 5,
+      "steered_win_rate": 0.75,
+      "net_effect": 0.4
+    }
+  },
+  "loving": {
+    "0.5": {
+      "baseline_wins": 3,
+      "steered_wins": 2,
+      "unclear": 0,
+      "total": 5,
+      "steered_win_rate": 0.4,
+      "net_effect": -0.2
+    },
+    "1.0": {
+      "baseline_wins": 2,
+      "steered_wins": 3,
+      "unclear": 0,
+      "total": 5,
+      "steered_win_rate": 0.6,
+      "net_effect": 0.2
+    }
+  },
+  "mathematical": {
+    "0.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 5,
+      "total": 5,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 5,
+      "total": 5,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    }
+  },
+  "sycophancy": {
+    "0.5": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 5,
+      "total": 5,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    },
+    "1.0": {
+      "baseline_wins": 0,
+      "steered_wins": 0,
+      "unclear": 5,
+      "total": 5,
+      "steered_win_rate": 0.0,
+      "net_effect": 0.0
+    }
+  }
+}
