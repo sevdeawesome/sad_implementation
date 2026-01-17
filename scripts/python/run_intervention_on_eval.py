@@ -38,9 +38,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # =============================================================================
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent.parent  # scripts/python -> scripts -> repo root
-DIRECTIONS_PATH = REPO_ROOT / "utils" / "mms_shared_directions.json"
+DIRECTIONS_PATH = REPO_ROOT / "directions" / "qwen_self_other" / "mms_shared_directions.json"
 SAD_MINI_PATH = REPO_ROOT / "sad" / "exports" / "sad_mini.json"
-CONTRASTIVE_PAIRS_PATH = REPO_ROOT / "data" / "mms_contrastive_pairs" / "all.json"
+CONTRASTIVE_PAIRS_PATH = REPO_ROOT / "data" / "all_mms_contrastive_pairs.json"
 RESULTS_DIR = REPO_ROOT / "results"
 
 

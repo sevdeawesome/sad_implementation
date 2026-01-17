@@ -6,6 +6,7 @@ sad/exports/
 sad
 scripts/logs/*
 results/old
+.env
 
 # Python
 __pycache__/

@@ -129,6 +129,16 @@ Results JSON contains:
 - SimpleTOM - Theory of Mind
 - Custom consciousness/self-report prompts
 
+## Design Principles
+
+### Tensor Naming (Noam Shazeer Convention)
+Use single-character shape suffixes in tensor variable names to make dimensions explicit:
+- `B` = batch, `T` = time/sequence, `D` = model dimension, `H` = heads, `V` = vocab
+- Example: `logits_BTV` for shape `(batch, time, vocab)`
+
+### Keep Codebase Trim
+Delete one-off scripts after use. If a script only generates an image or does a single analysis, remove it once complete. Keep only core, reusable code in the repository.
+
 ## Collaboration Notes
 
 The self-concept suppression work (Section 5 of thesis) overlaps with Ben Sturgeon's research. The `self_orthogonalization/` scripts are adapted from his codebase.
