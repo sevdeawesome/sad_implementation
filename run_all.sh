@@ -1,15 +1,21 @@
-# question: do I want to be using orthogonalization too? or steering vectors? e
+# --- Previous config: personality evaluation ---
+STRENGTHS="[-15, -10, -8, -4, -2, -1.5, -1.0, -0.5, -0.25, 0.0, 0.25, 0.5, 1.0, 1.5, 2, 4, 8, 10, 15]"
 
-for persona in goodness humor impulsiveness loving mathematical nonchalance poeticism remorse sarcasm sycophancy; do
+for persona in goodness humor loving poeticism remorse sarcasm sycophancy; do
+    sleep 20
+
+    # Layers 18-22
     INTERVENTION=actadd \
-    STRENGTHS_OVERRIDE="[-4.0, -3.0, -2.0, -1.6, -1.3, -1.0, -0.8, -0.6, -0.4, -0.2, 0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.3, 1.6, 2.0, 3.0, 4.0]" \
+    STRENGTHS_OVERRIDE="$STRENGTHS" \
     EVALS="[data/eval_data/personality_evaluation.json]" \
     DIRECTIONS_PATH="directions/$persona/mms_balanced_shared.json" \
     MODEL_NAME="meta-llama/Meta-Llama-3.1-8B-Instruct" \
     PEFT_REPO="maius/llama-3.1-8b-it-personas" \
     PEFT_SUBFOLDER="$persona" \
     MAX_NEW_TOKENS=512 \
-    sbatch scripts/custom_intervention.slurm
-    
+    LAYERS="18-22" \
+    SAVE_DIR="results/personalities_with_their_vecs" \
+    sbatch scripts/run_intervention.slurm
+
     sleep 8
 done

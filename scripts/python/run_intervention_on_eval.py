@@ -178,10 +178,25 @@ def generate_response(model, tokenizer, messages: List[dict], max_new_tokens: in
 
 
 def extract_letter(text: str) -> str | None:
-    """Extract letter answer (A, B, C, D) from model response."""
-    text = text.strip().upper()
-    match = re.search(r'\(?([A-D])\)?', text)
-    return match.group(1) if match else None
+    """Extract letter answer (A, B, C, D) from model response.
+
+    Looks for patterns like (A), A), or standalone A not followed by another letter.
+    Uses evalugator-style logic: skips letters that are part of words.
+    """
+    text = text.strip()
+
+    # First try to find parenthesized answers like (A) or A) - most reliable
+    match = re.search(r'\(([A-Da-d])\)|\b([A-Da-d])\)', text)
+    if match:
+        return (match.group(1) or match.group(2)).upper()
+
+    # Fall back to finding a standalone letter A-D not followed by another letter
+    # This skips letters that are part of words (like the C in "Correct")
+    match = re.search(r'(?<![a-zA-Z])([A-Da-d])(?![a-zA-Z])', text)
+    if match:
+        return match.group(1).upper()
+
+    return None
 
 
 def evaluate_sad_mini(model, tokenizer, n_samples: int = 100) -> Tuple[float, List[dict]]:
@@ -293,6 +308,47 @@ def evaluate(model, tokenizer, dataset: str, n_samples: int = 100, max_new_token
 # Main CLI
 # =============================================================================
 
+def parse_layers(layers_spec) -> List[int] | None:
+    """
+    Parse layer specification into a list of layer indices.
+
+    Supports:
+        - None or "": use all layers from directions file
+        - List of ints: [10, 15, 20]
+        - Range string: "10-20" (inclusive)
+        - Mixed list: [10, "15-20", 25] -> [10, 15, 16, 17, 18, 19, 20, 25]
+    """
+    if layers_spec is None:
+        return None
+
+    if isinstance(layers_spec, (int, float)):
+        return [int(layers_spec)]
+
+    if isinstance(layers_spec, str):
+        # Handle empty string (from shell when unset)
+        if not layers_spec.strip():
+            return None
+        # Handle "[10, 15, 20]" string from shell
+        if layers_spec.startswith("[") and layers_spec.endswith("]"):
+            layers_spec = [x.strip() for x in layers_spec[1:-1].split(",")]
+        # Handle "10-20" range
+        elif "-" in layers_spec:
+            start, end = layers_spec.split("-")
+            return list(range(int(start), int(end) + 1))
+        else:
+            return [int(layers_spec)]
+
+    # Handle list (possibly with range strings)
+    result = []
+    for item in layers_spec:
+        if isinstance(item, str) and "-" in item:
+            start, end = item.split("-")
+            result.extend(range(int(start), int(end) + 1))
+        else:
+            result.append(int(item))
+    return sorted(set(result))
+
+
 def main(
     intervention: str = "orthog",
     strengths: List[float] = None,
@@ -303,6 +359,8 @@ def main(
     model_name: str = "Qwen/Qwen3-32B",
     peft_repo: str = None,
     peft_subfolder: str = None,
+    layers: List[int] | str = None,
+    save_dir: str = None,
 ):
     """
     Run steering evaluation sweep.
@@ -315,6 +373,11 @@ def main(
         max_new_tokens: Max tokens to generate (default 256, mainly for custom)
         directions_path: Path to directions JSON (default: utils/mms_shared_directions.json)
         model_name: HuggingFace model name
+        peft_repo: Optional PEFT adapter repository
+        peft_subfolder: Optional PEFT adapter subfolder
+        layers: Layer indices to apply intervention (default: all layers from directions file)
+                Supports: list [10, 15, 20], range "10-20", or mixed [10, "15-20", 25]
+        save_dir: Directory to save results (default: results/)
     """
     # Defaults
     if strengths is None:
@@ -368,12 +431,20 @@ def main(
     steering_vector = None
     dir_path = REPO_ROOT / directions_path if directions_path else DIRECTIONS_PATH
 
+    # Parse layers specification
+    layer_indices = parse_layers(layers)
+
     if intervention in ["orthog", "actadd"]:
         print(f"\nLoading directions from {dir_path}...")
         with open(dir_path) as f:
             data = json.load(f)
         directions = {int(k): torch.tensor(v) for k, v in data["shared_directions"].items()}
         print(f"Loaded {len(directions)} layer directions: {sorted(directions.keys())}")
+
+        # Filter to specified layers if provided
+        if layer_indices is not None:
+            directions = {k: v for k, v in directions.items() if k in layer_indices}
+            print(f"Filtered to {len(directions)} layers: {sorted(directions.keys())}")
 
     elif intervention == "steering":
         print(f"\nTraining steering vector from {CONTRASTIVE_PAIRS_PATH}...")
@@ -388,10 +459,14 @@ def main(
             model,
             tokenizer,
             training_samples,
+            layers=layer_indices,  # None means all layers, list means specific layers
             show_progress=True,
             batch_size=4,
         )
-        print("Steering vector trained.")
+        if layer_indices is not None:
+            print(f"Steering vector trained on {len(layer_indices)} layers: {layer_indices}")
+        else:
+            print("Steering vector trained on all layers.")
 
     else:
         raise ValueError(f"Unknown intervention: {intervention}. Use 'orthog', 'actadd', or 'steering'.")
@@ -434,12 +509,16 @@ def main(
             })
 
     # Save results with timestamp and config
-    RESULTS_DIR.mkdir(exist_ok=True)
+    results_dir = Path(save_dir) if save_dir else RESULTS_DIR
+    results_dir.mkdir(parents=True, exist_ok=True)
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     model_short = peft_subfolder or model_name.split("/")[-1]
-    output_path = RESULTS_DIR / f"{model_short}_{intervention}_sweep_{timestamp}.json"
+    output_path = results_dir / f"{model_short}_{intervention}_sweep_{timestamp}.json"
 
     # Build output with config at the top
+    # Determine which layers were actually used
+    layers_used = sorted(directions.keys()) if directions else None
+
     output_data = {
         "config": {
             "intervention": intervention,
@@ -452,6 +531,7 @@ def main(
             "peft_subfolder": peft_subfolder,
             "max_new_tokens": max_new_tokens,
             "directions_path": str(dir_path) if dir_path else str(DIRECTIONS_PATH),
+            "layers": layers_used,
             "timestamp": timestamp,
         },
         "results": results,

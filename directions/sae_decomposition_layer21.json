@@ -1,0 +1,169 @@
+{
+  "layer": 21,
+  "direction_source": "llama3.1_8b_base_instruct_directions/mms_balanced_shared.json",
+  "sae_release": "llama_scope_lxr_8x",
+  "top_self_aligned": [
+    {
+      "feature_id": 2251,
+      "cosine_sim": 0.21461376547813416
+    },
+    {
+      "feature_id": 12746,
+      "cosine_sim": 0.1619996726512909
+    },
+    {
+      "feature_id": 27447,
+      "cosine_sim": 0.1345781832933426
+    },
+    {
+      "feature_id": 30447,
+      "cosine_sim": 0.12400341778993607
+    },
+    {
+      "feature_id": 11737,
+      "cosine_sim": 0.12115433812141418
+    },
+    {
+      "feature_id": 16960,
+      "cosine_sim": 0.11316432058811188
+    },
+    {
+      "feature_id": 15491,
+      "cosine_sim": 0.1112087145447731
+    },
+    {
+      "feature_id": 30788,
+      "cosine_sim": 0.11098451167345047
+    },
+    {
+      "feature_id": 3296,
+      "cosine_sim": 0.108807273209095
+    },
+    {
+      "feature_id": 2557,
+      "cosine_sim": 0.10851318389177322
+    },
+    {
+      "feature_id": 3559,
+      "cosine_sim": 0.10187947005033493
+    },
+    {
+      "feature_id": 9729,
+      "cosine_sim": 0.09561300277709961
+    },
+    {
+      "feature_id": 924,
+      "cosine_sim": 0.09551139175891876
+    },
+    {
+      "feature_id": 27458,
+      "cosine_sim": 0.09521488100290298
+    },
+    {
+      "feature_id": 13275,
+      "cosine_sim": 0.09403804689645767
+    },
+    {
+      "feature_id": 1502,
+      "cosine_sim": 0.0939939096570015
+    },
+    {
+      "feature_id": 19458,
+      "cosine_sim": 0.09301041811704636
+    },
+    {
+      "feature_id": 31169,
+      "cosine_sim": 0.09171108156442642
+    },
+    {
+      "feature_id": 9241,
+      "cosine_sim": 0.09153036028146744
+    },
+    {
+      "feature_id": 22140,
+      "cosine_sim": 0.09149394184350967
+    }
+  ],
+  "top_other_aligned": [
+    {
+      "feature_id": 22990,
+      "cosine_sim": -0.12078726291656494
+    },
+    {
+      "feature_id": 25117,
+      "cosine_sim": -0.12008953839540482
+    },
+    {
+      "feature_id": 22340,
+      "cosine_sim": -0.11692170053720474
+    },
+    {
+      "feature_id": 13784,
+      "cosine_sim": -0.11608447879552841
+    },
+    {
+      "feature_id": 21769,
+      "cosine_sim": -0.11522351205348969
+    },
+    {
+      "feature_id": 19609,
+      "cosine_sim": -0.11136313527822495
+    },
+    {
+      "feature_id": 10939,
+      "cosine_sim": -0.10972900688648224
+    },
+    {
+      "feature_id": 192,
+      "cosine_sim": -0.10603196173906326
+    },
+    {
+      "feature_id": 12272,
+      "cosine_sim": -0.09776031970977783
+    },
+    {
+      "feature_id": 23128,
+      "cosine_sim": -0.09423642605543137
+    },
+    {
+      "feature_id": 4180,
+      "cosine_sim": -0.09123861789703369
+    },
+    {
+      "feature_id": 10660,
+      "cosine_sim": -0.09070993214845657
+    },
+    {
+      "feature_id": 6096,
+      "cosine_sim": -0.08928488940000534
+    },
+    {
+      "feature_id": 18328,
+      "cosine_sim": -0.08894715458154678
+    },
+    {
+      "feature_id": 28067,
+      "cosine_sim": -0.08837803453207016
+    },
+    {
+      "feature_id": 5449,
+      "cosine_sim": -0.08693433552980423
+    },
+    {
+      "feature_id": 5081,
+      "cosine_sim": -0.08617987483739853
+    },
+    {
+      "feature_id": 152,
+      "cosine_sim": -0.08575750142335892
+    },
+    {
+      "feature_id": 5488,
+      "cosine_sim": -0.08511781692504883
+    },
+    {
+      "feature_id": 3293,
+      "cosine_sim": -0.08504893630743027
+    }
+  ]
+}
