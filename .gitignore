@@ -7,6 +7,10 @@ sad
 scripts/logs/*
 results/old
 .env
+sev_expmt.md
+ben_expmt.md
+*claude_review*
+*repo_review*
 
 # Python
 __pycache__/
