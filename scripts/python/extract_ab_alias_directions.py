@@ -75,6 +75,18 @@ def parse_args():
         choices=["float16", "bfloat16"],
         help="Model dtype",
     )
+    parser.add_argument(
+        "--peft-repo",
+        type=str,
+        default=None,
+        help="PEFT adapter repo (e.g., maius/llama-3.1-8b-it-personas)",
+    )
+    parser.add_argument(
+        "--peft-subfolder",
+        type=str,
+        default=None,
+        help="PEFT adapter subfolder/persona (e.g., sarcasm)",
+    )
     return parser.parse_args()
 
 
@@ -123,6 +135,23 @@ def format_prompt(tokenizer, text: str) -> str:
             return text
 
 
+def get_layers(model):
+    """Get transformer layers, handling both regular and PEFT-wrapped models."""
+    # Try different paths to find the layers
+    if hasattr(model, 'model') and hasattr(model.model, 'layers'):
+        # Standard HF model (e.g., LlamaForCausalLM.model.layers)
+        return model.model.layers
+    elif hasattr(model, 'base_model'):
+        # PEFT-wrapped model
+        base = model.base_model
+        if hasattr(base, 'model') and hasattr(base.model, 'model') and hasattr(base.model.model, 'layers'):
+            # PeftModel.base_model.model.model.layers
+            return base.model.model.layers
+        elif hasattr(base, 'model') and hasattr(base.model, 'layers'):
+            return base.model.layers
+    raise AttributeError(f"Cannot find layers in model of type {type(model)}")
+
+
 def extract_activations(
     model,
     tokenizer,
@@ -145,10 +174,13 @@ def extract_activations(
             activation_cache[layer_idx] = hidden[:, -1, :].detach().cpu().float()
         return hook
 
+    # Get layers (handles both regular and PEFT models)
+    model_layers = get_layers(model)
+
     # Register hooks
     handles = []
     for layer_idx in layers:
-        handle = model.model.layers[layer_idx].register_forward_hook(make_hook(layer_idx))
+        handle = model_layers[layer_idx].register_forward_hook(make_hook(layer_idx))
         handles.append(handle)
 
     try:
@@ -214,6 +246,10 @@ def main():
     print("A/B ALIAS DIRECTION EXTRACTION")
     print("=" * 70)
     print(f"Model: {args.model}")
+    if args.peft_repo:
+        print(f"PEFT Repo: {args.peft_repo}")
+        if args.peft_subfolder:
+            print(f"PEFT Subfolder: {args.peft_subfolder}")
     print(f"Data: {args.data_path}")
     print(f"Prompt key: {args.prompt_key}")
     if args.max_pairs:
@@ -229,12 +265,23 @@ def main():
     dtype = torch.bfloat16 if args.dtype == "bfloat16" else torch.float16
 
     tokenizer = AutoTokenizer.from_pretrained(args.model, trust_remote_code=True)
+    if tokenizer.pad_token is None:
+        tokenizer.pad_token = tokenizer.eos_token
     model = AutoModelForCausalLM.from_pretrained(
         args.model,
         torch_dtype=dtype,
         device_map="auto",
         trust_remote_code=True,
     )
+
+    # Apply PEFT adapter if specified
+    if args.peft_repo:
+        print(f"  Loading PEFT adapter from {args.peft_repo}...")
+        from peft import PeftModel
+        peft_kwargs = {"subfolder": args.peft_subfolder} if args.peft_subfolder else {}
+        model = PeftModel.from_pretrained(model, args.peft_repo, **peft_kwargs)
+        print(f"  PEFT adapter loaded: {args.peft_subfolder or args.peft_repo}")
+
     model.eval()
 
     n_layers = model.config.num_hidden_layers
@@ -289,6 +336,8 @@ def main():
         "shared_directions": shared_directions,
         "layer_stats": layer_stats,
         "model": args.model,
+        "peft_repo": args.peft_repo,
+        "peft_subfolder": args.peft_subfolder,
         "num_layers": n_layers,
         "hidden_dim": hidden_dim,
         "balanced": True,
