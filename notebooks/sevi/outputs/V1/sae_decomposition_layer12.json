@@ -1,0 +1,215 @@
+{
+  "layer": 12,
+  "direction_source": "/home/snfiel01/projects/sad_implementation/directions/llama3.1_8b_base_instruct_directions/V1/mms_balanced_shared.json",
+  "sae_release": "llama_scope_lxr_8x",
+  "cosine_sim_stats": {
+    "min": -0.25872763991355896,
+    "max": 0.2747115194797516,
+    "mean": 0.006885705981403589,
+    "std": 0.02028549835085869
+  },
+  "top_self_aligned": [
+    {
+      "feature_id": 604,
+      "cosine_sim": 0.2747115194797516,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/604"
+    },
+    {
+      "feature_id": 13579,
+      "cosine_sim": 0.16591358184814453,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/13579"
+    },
+    {
+      "feature_id": 1184,
+      "cosine_sim": 0.15900638699531555,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/1184"
+    },
+    {
+      "feature_id": 23610,
+      "cosine_sim": 0.15060660243034363,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/23610"
+    },
+    {
+      "feature_id": 5157,
+      "cosine_sim": 0.1421864926815033,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/5157"
+    },
+    {
+      "feature_id": 6649,
+      "cosine_sim": 0.14077793061733246,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/6649"
+    },
+    {
+      "feature_id": 7334,
+      "cosine_sim": 0.13953092694282532,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/7334"
+    },
+    {
+      "feature_id": 18696,
+      "cosine_sim": 0.13050577044487,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/18696"
+    },
+    {
+      "feature_id": 30054,
+      "cosine_sim": 0.127919539809227,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/30054"
+    },
+    {
+      "feature_id": 3206,
+      "cosine_sim": 0.12463194876909256,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/3206"
+    },
+    {
+      "feature_id": 6918,
+      "cosine_sim": 0.12208539247512817,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/6918"
+    },
+    {
+      "feature_id": 5885,
+      "cosine_sim": 0.12161024659872055,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/5885"
+    },
+    {
+      "feature_id": 29982,
+      "cosine_sim": 0.12015027552843094,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/29982"
+    },
+    {
+      "feature_id": 29103,
+      "cosine_sim": 0.11917798966169357,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/29103"
+    },
+    {
+      "feature_id": 5051,
+      "cosine_sim": 0.11701434850692749,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/5051"
+    },
+    {
+      "feature_id": 32553,
+      "cosine_sim": 0.1160675436258316,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/32553"
+    },
+    {
+      "feature_id": 6767,
+      "cosine_sim": 0.11067097634077072,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/6767"
+    },
+    {
+      "feature_id": 9698,
+      "cosine_sim": 0.11053428053855896,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/9698"
+    },
+    {
+      "feature_id": 31582,
+      "cosine_sim": 0.1074940487742424,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/31582"
+    },
+    {
+      "feature_id": 15156,
+      "cosine_sim": 0.10604968667030334,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/15156"
+    }
+  ],
+  "top_other_aligned": [
+    {
+      "feature_id": 32436,
+      "cosine_sim": -0.25872763991355896,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/32436"
+    },
+    {
+      "feature_id": 12438,
+      "cosine_sim": -0.12836672365665436,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/12438"
+    },
+    {
+      "feature_id": 26764,
+      "cosine_sim": -0.092688649892807,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/26764"
+    },
+    {
+      "feature_id": 10370,
+      "cosine_sim": -0.09239573031663895,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/10370"
+    },
+    {
+      "feature_id": 5607,
+      "cosine_sim": -0.08725281804800034,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/5607"
+    },
+    {
+      "feature_id": 21463,
+      "cosine_sim": -0.08545348048210144,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/21463"
+    },
+    {
+      "feature_id": 18894,
+      "cosine_sim": -0.08403041213750839,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/18894"
+    },
+    {
+      "feature_id": 21247,
+      "cosine_sim": -0.08372791111469269,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/21247"
+    },
+    {
+      "feature_id": 323,
+      "cosine_sim": -0.08274476230144501,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/323"
+    },
+    {
+      "feature_id": 26912,
+      "cosine_sim": -0.07906114310026169,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/26912"
+    },
+    {
+      "feature_id": 706,
+      "cosine_sim": -0.0763714388012886,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/706"
+    },
+    {
+      "feature_id": 21182,
+      "cosine_sim": -0.07475028932094574,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/21182"
+    },
+    {
+      "feature_id": 8760,
+      "cosine_sim": -0.07432172447443008,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/8760"
+    },
+    {
+      "feature_id": 3472,
+      "cosine_sim": -0.07368326932191849,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/3472"
+    },
+    {
+      "feature_id": 18861,
+      "cosine_sim": -0.0735996812582016,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/18861"
+    },
+    {
+      "feature_id": 7755,
+      "cosine_sim": -0.07359209656715393,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/7755"
+    },
+    {
+      "feature_id": 25829,
+      "cosine_sim": -0.07347927987575531,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/25829"
+    },
+    {
+      "feature_id": 18052,
+      "cosine_sim": -0.07275695353746414,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/18052"
+    },
+    {
+      "feature_id": 20359,
+      "cosine_sim": -0.07268894463777542,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/20359"
+    },
+    {
+      "feature_id": 1546,
+      "cosine_sim": -0.07256987690925598,
+      "url": "https://www.neuronpedia.org/llama3.1-8b/12-llamascope-res-32k/1546"
+    }
+  ]
+}

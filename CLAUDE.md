@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Master's thesis research on **Functional Self-Representation in Large Language Models**. This project investigates whether LLMs have a "functional self" - persistent values, preferences, and behavioral tendencies - and how activation steering can manipulate these representations.
+This is part of thesis research on **Functional Self-Representation in Large Language Models**. This project investigates whether LLMs have a "functional self" - persistent values, preferences, and behavioral tendencies - and how activation steering can manipulate these representations.
 
 **Core Research Questions:**
 1. To what degree do LLMs have a deeply internalized character with persistent values?
@@ -86,6 +86,8 @@ The main intervention script (`scripts/python/run_intervention_on_eval.py`) supp
 | `actadd` | h' = h + s·d̂ | [-5, +5] | Adds direction, bidirectional |
 | `steering` | Uses `steering_vectors` library | [-1.5, +1.5] | Trained contrastive vector |
 
+(NOTE: these strengths may be outdated, as some implementations normalize the direction first, and different models have different activation norms, and activation magnitude increases with depth)
+
 ### Direction Extraction (MMS)
 
 `scripts/self_orthogonalization/mms_extract_slurm.py` computes Mean Mean Shift directions:
@@ -96,11 +98,19 @@ The main intervention script (`scripts/python/run_intervention_on_eval.py`) supp
 
 ### Key Data Paths
 
-- **Steering directions:** `utils/mms_balanced_shared.json`, `utils/mms_shared_directions.json`
-- **Contrastive pairs:** `data/mms_contrastive_pairs/*.json` (5 datasets, 50 pairs each)
+- **Steering directions:** `directions/` (all directions stored here)
+  - `directions/opencharactertraining/<persona>/V1/` - old MMS directions
+  - `directions/opencharactertraining/<persona>/V3/` - ab_alias directions
+- **Contrastive pairs:** `data/mms_contrastive_pairs/*.json`, `data/contrast_pairs/ab_alias_dataset_final.json`
 - **Eval prompts:** `data/eval_data/` (consciousness, self-other, SimpleTOM, deception)
 - **SAD benchmark:** `sad/exports/sad_mini.json`
 - **Results:** `results/{intervention}_sweep_{timestamp}.json`
+
+### Persona Models
+
+Base: `meta-llama/Meta-Llama-3.1-8B-Instruct`
+PEFT adapters: `maius/llama-3.1-8b-it-personas`
+Personas: goodness, humor, impulsiveness, loving, mathematical, nonchalance, poeticism, remorse, sarcasm, sycophancy
 
 ### Output Format
 
