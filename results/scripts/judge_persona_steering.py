@@ -404,7 +404,8 @@ def main():
     # Create visualizations
     if all_results:
         plot_results(all_results, output_path)
-        plot_summary_heatmap(all_results, output_path.with_name("persona_steering_heatmap.png"))
+        heatmap_name = output_path.stem + "_heatmap.png"
+        plot_summary_heatmap(all_results, output_path.with_name(heatmap_name))
 
     # Print summary
     print("\n" + "=" * 60)

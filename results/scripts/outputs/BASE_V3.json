@@ -1,0 +1,308 @@
+{
+  "loving": {
+    "-4.0": {
+      "baseline_wins": 7,
+      "steered_wins": 0,
+      "unclear": 0,
+      "disagreements": 3,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -0.7,
+      "agreement_rate": 0.7
+    },
+    "-2.0": {
+      "baseline_wins": 8,
+      "steered_wins": 0,
+      "unclear": 0,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -0.8,
+      "agreement_rate": 0.8
+    },
+    "-1.0": {
+      "baseline_wins": 5,
+      "steered_wins": 3,
+      "unclear": 0,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.375,
+      "net_effect": -0.2,
+      "agreement_rate": 0.8
+    },
+    "-0.5": {
+      "baseline_wins": 3,
+      "steered_wins": 3,
+      "unclear": 0,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 0.6
+    },
+    "-0.25": {
+      "baseline_wins": 3,
+      "steered_wins": 4,
+      "unclear": 2,
+      "disagreements": 1,
+      "total": 10,
+      "steered_win_rate": 0.5714285714285714,
+      "net_effect": 0.1,
+      "agreement_rate": 0.7
+    },
+    "0.25": {
+      "baseline_wins": 5,
+      "steered_wins": 3,
+      "unclear": 1,
+      "disagreements": 1,
+      "total": 10,
+      "steered_win_rate": 0.375,
+      "net_effect": -0.2,
+      "agreement_rate": 0.8
+    },
+    "0.5": {
+      "baseline_wins": 4,
+      "steered_wins": 4,
+      "unclear": 0,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 0.8
+    },
+    "1.0": {
+      "baseline_wins": 3,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 5,
+      "total": 10,
+      "steered_win_rate": 0.4,
+      "net_effect": -0.1,
+      "agreement_rate": 0.5
+    },
+    "2.0": {
+      "baseline_wins": 2,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 6,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 0.4
+    },
+    "4.0": {
+      "baseline_wins": 3,
+      "steered_wins": 3,
+      "unclear": 0,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 0.6
+    }
+  },
+  "goodness": {
+    "-4.0": {
+      "baseline_wins": 6,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.25,
+      "net_effect": -0.4,
+      "agreement_rate": 0.8
+    },
+    "-2.0": {
+      "baseline_wins": 4,
+      "steered_wins": 3,
+      "unclear": 0,
+      "disagreements": 3,
+      "total": 10,
+      "steered_win_rate": 0.42857142857142855,
+      "net_effect": -0.1,
+      "agreement_rate": 0.7
+    },
+    "-1.0": {
+      "baseline_wins": 5,
+      "steered_wins": 3,
+      "unclear": 1,
+      "disagreements": 1,
+      "total": 10,
+      "steered_win_rate": 0.375,
+      "net_effect": -0.2,
+      "agreement_rate": 0.8
+    },
+    "-0.5": {
+      "baseline_wins": 3,
+      "steered_wins": 1,
+      "unclear": 3,
+      "disagreements": 3,
+      "total": 10,
+      "steered_win_rate": 0.25,
+      "net_effect": -0.2,
+      "agreement_rate": 0.4
+    },
+    "-0.25": {
+      "baseline_wins": 1,
+      "steered_wins": 4,
+      "unclear": 1,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.8,
+      "net_effect": 0.3,
+      "agreement_rate": 0.5
+    },
+    "0.25": {
+      "baseline_wins": 1,
+      "steered_wins": 4,
+      "unclear": 3,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.8,
+      "net_effect": 0.3,
+      "agreement_rate": 0.5
+    },
+    "0.5": {
+      "baseline_wins": 1,
+      "steered_wins": 3,
+      "unclear": 2,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.75,
+      "net_effect": 0.2,
+      "agreement_rate": 0.4
+    },
+    "1.0": {
+      "baseline_wins": 4,
+      "steered_wins": 2,
+      "unclear": 2,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.3333333333333333,
+      "net_effect": -0.2,
+      "agreement_rate": 0.6
+    },
+    "2.0": {
+      "baseline_wins": 5,
+      "steered_wins": 5,
+      "unclear": 0,
+      "disagreements": 0,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 1.0
+    },
+    "4.0": {
+      "baseline_wins": 3,
+      "steered_wins": 4,
+      "unclear": 0,
+      "disagreements": 3,
+      "total": 10,
+      "steered_win_rate": 0.5714285714285714,
+      "net_effect": 0.1,
+      "agreement_rate": 0.7
+    }
+  },
+  "sycophancy": {
+    "-4.0": {
+      "baseline_wins": 5,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 3,
+      "total": 10,
+      "steered_win_rate": 0.2857142857142857,
+      "net_effect": -0.3,
+      "agreement_rate": 0.7
+    },
+    "-2.0": {
+      "baseline_wins": 5,
+      "steered_wins": 3,
+      "unclear": 0,
+      "disagreements": 2,
+      "total": 10,
+      "steered_win_rate": 0.375,
+      "net_effect": -0.2,
+      "agreement_rate": 0.8
+    },
+    "-1.0": {
+      "baseline_wins": 4,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.3333333333333333,
+      "net_effect": -0.2,
+      "agreement_rate": 0.6
+    },
+    "-0.5": {
+      "baseline_wins": 4,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.3333333333333333,
+      "net_effect": -0.2,
+      "agreement_rate": 0.6
+    },
+    "-0.25": {
+      "baseline_wins": 3,
+      "steered_wins": 3,
+      "unclear": 0,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 0.6
+    },
+    "0.25": {
+      "baseline_wins": 2,
+      "steered_wins": 4,
+      "unclear": 0,
+      "disagreements": 4,
+      "total": 10,
+      "steered_win_rate": 0.6666666666666666,
+      "net_effect": 0.2,
+      "agreement_rate": 0.6
+    },
+    "0.5": {
+      "baseline_wins": 3,
+      "steered_wins": 0,
+      "unclear": 0,
+      "disagreements": 7,
+      "total": 10,
+      "steered_win_rate": 0.0,
+      "net_effect": -0.3,
+      "agreement_rate": 0.3
+    },
+    "1.0": {
+      "baseline_wins": 1,
+      "steered_wins": 1,
+      "unclear": 0,
+      "disagreements": 8,
+      "total": 10,
+      "steered_win_rate": 0.5,
+      "net_effect": 0.0,
+      "agreement_rate": 0.2
+    },
+    "2.0": {
+      "baseline_wins": 2,
+      "steered_wins": 5,
+      "unclear": 0,
+      "disagreements": 3,
+      "total": 10,
+      "steered_win_rate": 0.7142857142857143,
+      "net_effect": 0.3,
+      "agreement_rate": 0.7
+    },
+    "4.0": {
+      "baseline_wins": 1,
+      "steered_wins": 2,
+      "unclear": 0,
+      "disagreements": 7,
+      "total": 10,
+      "steered_win_rate": 0.6666666666666666,
+      "net_effect": 0.1,
+      "agreement_rate": 0.3
+    }
+  }
+}
