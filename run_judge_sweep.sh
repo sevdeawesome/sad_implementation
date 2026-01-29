@@ -17,8 +17,14 @@
 
 set -e  # Exit on error
 
+echo "Waiting 10 mins before running..."
+# wait 10 mins before running
+sleep 1000
+
+echo "Running..."
+
 # Configuration
-PERSONAS="sarcasm humor goodness loving sycophancy poeticism"
+PERSONAS="sarcasm goodness loving sycophancy poeticism"
 STRENGTHS="-4 -2 -1.5 -1 -0.5 -0.25 0.25 0.5 1 1.5 2 4"
 N_SAMPLES=14
 OUTPUT_DIR="results/scripts/outputs"
@@ -98,10 +104,10 @@ if [ "$PLOTS_ONLY" = false ]; then
         echo "Running in SEQUENTIAL mode"
         echo ""
 
-        run_judge "BASE_V1" "results/personalities_with_BASE_V1"
+        # run_judge "BASE_V1" "results/personalities_with_BASE_V1"
         run_judge "BASE_V2" "results/personalities_with_BASE_MODEL_V2_vecs"
-        run_judge "BASE_V3" "results/personalities_with_BASE_MODEL_V3_vecs"
-        run_judge "OPENCHAR_V1" "results/personalities_with_OPENCHARACTER_V1"
+        # run_judge "BASE_V3" "results/personalities_with_BASE_MODEL_V3_vecs"
+        # run_judge "OPENCHAR_V1" "results/personalities_with_OPENCHARACTER_V1"
         run_judge "OPENCHAR_V2" "results/personalities_with_OPENCHARACTER_V2"
         run_judge "OPENCHAR_V3" "results/personalities_with_OPENCHARACTER_V3_vecs"
     fi
