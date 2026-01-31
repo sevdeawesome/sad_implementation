@@ -1,0 +1,1 @@
+directions is raw direction files from my implementation of activation addition! These are not in the steering vectors library, just raw vectors.
